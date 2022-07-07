@@ -1,0 +1,31 @@
+h1 {
+  color: greenyellow;
+}
+
+h2 {
+  color: green;
+}
+
+h3 {
+  color: darkgreen;
+}
+
+p {
+  font-family: Georgia, serif;
+}
+
+a {
+  font-family: 微软雅黑;
+}
+
+a:link {
+  color: green;
+}
+
+a:hover {
+  color: blue;
+}
+
+ul li {
+  font-weight: 100;
+}

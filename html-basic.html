@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="html-basic.css">
 </head>
 
 <body>
@@ -18,10 +19,13 @@
     Laudantium impedit vel officia harum debitis ullam reiciendis, itaque ducimus fugiat dolorem quis. Explicabo, non
     eum.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quasi?</p>
-  <a target="_blank" href="jd.com">在新窗口打开京东</a>
+<a target="_blank" href="https://www.jd.com">在新窗口打开京东</a>
+<!--不能写jd.com-->
   <a href="mailto:aaa@bbb.com">点我发邮件</a>
   <a href="#down">跳到页面底部</a>
   <a href="xxx/jianai.pdf" download="简爱.pdf">点我下载文件</a>
+
+
   <div>
     <img src="images/grapes.jpg" title="grapes" alt="" height="200" width="200" />
   </div>
@@ -39,6 +43,8 @@
     }
   </code></pre>
   <hr>
+ul>li.foo$$
+
   <ul>
     <li>小学</li>
     <ol>
@@ -76,24 +82,35 @@
     <input hidden type="text" name="sourceid" value="UTF">
     <button type="submit">在新窗口打开搜索结果</button>
   </form>
+<!--老谢写法-->
+<!-- <form target="_blank" action="https://www.google.com.hk/search">
+    <input type="text" name="q">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input  type="hidden" name="sourceid" value="UTF">
+    <button type="submit">在新窗口打开搜索结果</button>
+  </form> -->
+
   <hr>
 
   <p>个人信息调查表</p>
   <form>
     性别
     <label>
-      <input type="radio" name="gender">男
+      <!--加value是为了提交的时候有用-->
+      <input type="radio" name="gender" value="male">男
     </label>
+    <!-- 也可以这样写
+                                                                                    <input type="radio" name="gender-female" value="female"><label for="fender-female">女</label> -->
     <label>
-      <input type="radio" name="gender">女
+      <input type="radio" name="gender" value="female">女
     </label>
     <br>
 
     年龄
-    <select>
+    <select name="age">
       <optgroup label="少年">
         <option selected hidden>请选择</option>
-        <option>1到6岁</option>
+        <option value="1-6">1到6岁</option>
         <option>6到12岁</option>
       </optgroup>
       <optgroup label="青年">
@@ -108,11 +125,11 @@
     <br>
 
     生日
-    <input type="date" value="2021-11-04">
+    <input type="date" name="birthday" value="2021-11-04">
     <br>
 
     生辰
-    <input type="time">
+    <input type="time" name="birthtime">
     <br>
 
     <!--这里一开始没写出来-->
@@ -124,53 +141,62 @@
 
     自我介绍
     <br>
-    <textarea rows="10" cols="30">
+    <textarea rows="10" cols="30" name="selfintro">
       &lt;/textarea&gt;
     </textarea>
     <br>
 
-    <fieldset>
+    <!--在fieldset上加disabled即可全部禁用-->
+    <fieldset disabled>
       <legend>这里全部禁用了</legend>
       <input type="text" disabled>
       <input type="text" disabled>
       <input type="text" disabled>
       <input type="text" disabled>
     </fieldset>
-    <input type="submit" value="提交">
+<!-- <input type="submit" value="提交"> -->
+<!--更倾向于用button-->
+<button>提交</button>
     <input type="reset" value="重置">
   </form>
   <hr>
 
+  <!--记得写thead和tbody-->
   <table border="1px solid">
-    <tr>
-      <th>编号</th>
-      <th bgcolor="red">品名</th>
-      <th>进价</th>
-      <th>出价</th>
-    </tr>
-    <tr>
-      <td>aaa</td>
-      <td bgcolor="red">a</td>
-      <td rowspan="2">a</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <td>a</td>
-      <td bgcolor="red">a</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <td>a</td>
-      <td bgcolor="red">a</td>
-      <td>a</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <td>a</td>
-      <td bgcolor="red">a</td>
-      <td>a</td>
-      <td>a</td>
-    </tr>
+  <!--改第二列颜色可以直接用col标签-->
+  <thead>
+      <tr>
+        <th>编号</th>
+        <th bgcolor="red">品名</th>
+        <th>进价</th>
+        <th>出价</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>aaa</td>
+        <td bgcolor="red">a</td>
+        <td rowspan="2">a</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td bgcolor="red">a</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td bgcolor="red">a</td>
+        <td>a</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td bgcolor="red">a</td>
+        <td>a</td>
+        <td>a</td>
+      </tr>
+    </tbody>
   </table>
   <hr>
 
@@ -184,10 +210,10 @@
 
 
   <hr>
-
-  <a href="https://mi.com">小米</a>
+<!--这里是点击小米，会在iframe里打开网页-->
+<a href="http://nodejs.cn/" target="frame1">小米</a>
   <br>
-  <iframe id="" title="node" src="http://nodejs.cn/"></iframe>
+  <iframe name="frame1" title="node" src="http://nodejs.cn/"></iframe>
 
   <div> aaa&nbsp;&nbsp;&nbsp;bbbbb </div>
   <pre>

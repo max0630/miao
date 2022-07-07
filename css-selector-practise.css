@@ -1,0 +1,106 @@
+body>p:nth-child(1) {
+  color: red;
+}
+
+
+p.a:hover {
+  color: red;
+}
+
+
+p.a:focus {
+  color: blue;
+}
+
+p.a:active {
+  color: green;
+  /*一开始不懂为啥不显示绿色，后来查了一下发现要把active放到最后*/
+  /*LVHA顺序  :link  :visited  :hover  :active*/
+}
+
+p.c>span {
+  color: red;
+}
+
+p.c>span>span {
+  color: green;
+}
+
+p.c>span>span+span {
+  color: blue;
+}
+
+
+/*下面的顺序一变就会变颜色，不懂T T*/
+/*未访问的链接为粉色，是指所有链接吗？*/
+div>a:link {
+  color: pink;
+}
+
+div>a:visited {
+  color: orange;
+}
+
+
+/*邮件的链接为蓝色*/
+div>a[href*="@"] {
+  color: blue;
+}
+
+div>a[href*="tel"] {
+  color: yellow;
+}
+
+div>a[href*="pdf" i] {
+  font-size: 30px;
+}
+
+
+
+
+div.a>ul>li:nth-child(4),
+div.a>ul>li:nth-child(5),
+div.a>ul>li:nth-child(6),
+div.a>ul>li:nth-child(7) {
+  color: red;
+}
+
+
+
+div.b>ul>li:nth-child(n+65) {
+  color: green;
+}
+
+div.b>ul>li:nth-child(-n+50) {
+  color: blue;
+}
+
+div.b>ul>li:nth-child(-n+34) {
+  color: black;
+}
+
+/*放在最后写红色*/
+div.b>ul>li:nth-child(-n+25) {
+  color: red;
+}
+
+/*质数100以内，1，2,3，另外6的倍数前后位置上的两个数，只要不是5和7的倍数就是质数*/
+div.prime>ul>li {
+  color: black;
+}
+
+div.prime>ul>li:nth-child(2),
+div.prime>ul>li:nth-child(3),
+div.prime>ul>li:nth-child(6n+1),
+div.prime>ul>li:nth-child(6n-1) {
+  color: aqua;
+}
+
+div.prime>ul>li:nth-child(1) {
+  color: black;
+}
+
+div.prime>ul>li:nth-child(5n),
+div.prime>ul>li:nth-child(7n) {
+  color: black;
+}
