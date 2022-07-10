@@ -30,15 +30,18 @@
       font-size: 36px;
     }
 
-    /*文字在input里位置有些微差异，还需补充*/
+
     p.b input {
-      font-size: 36px;
+      /*font-size: 36px;
       width: 400px;
       height: 49.5px;
-      border: 1px solid grey;
-      border-radius: 0.05em;
+      border-radius: 0.05em;*/
+      font:inherit;
     }
-
+   /*文字在input里位置有些微差异，所以补充了下面这个，不清楚对不对*/
+    p.b input {
+      margin-left:11px;
+    }
     h2 {
       font-family: 'comic sans ms', '宋体';
       text-transform: capitalize;
