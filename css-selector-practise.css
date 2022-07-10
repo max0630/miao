@@ -1,12 +1,13 @@
 body>p:nth-child(1) {
   color: red;
 }
-
+/*body > :first-child 选中body子元素中 第一个*/
 
 p.a:hover {
   color: red;
 }
-
+/*不能用.a 因为后面有个a c类，不过后面权重大也就覆盖了*/
+/*应写为 [tabindex="1"]:hover {}*/
 
 p.a:focus {
   color: blue;
@@ -14,24 +15,27 @@ p.a:focus {
 
 p.a:active {
   color: green;
+}
   /*一开始不懂为啥不显示绿色，后来查了一下发现要把active放到最后*/
   /*LVHA顺序  :link  :visited  :hover  :active*/
-}
+/*顺序：focus、hover、active*/
 
 p.c>span {
   color: red;
 }
+/*.a.c span*/
 
 p.c>span>span {
   color: green;
 }
+/*.a.c span > :first-child*/
 
 p.c>span>span+span {
   color: blue;
 }
 
 
-/*下面的顺序一变就会变颜色，不懂T T*/
+
 /*未访问的链接为粉色，是指所有链接吗？*/
 div>a:link {
   color: pink;
@@ -64,7 +68,7 @@ div.a>ul>li:nth-child(6),
 div.a>ul>li:nth-child(7) {
   color: red;
 }
-
+/*可以删掉>*/
 
 
 div.b>ul>li:nth-child(n+65) {
@@ -83,13 +87,15 @@ div.b>ul>li:nth-child(-n+34) {
 div.b>ul>li:nth-child(-n+25) {
   color: red;
 }
+/*35-50可以取交集*/
+/*div /b ul li:nth-child(n+35):nth-child(-n+50)*/
 
 /*质数100以内，1，2,3，另外6的倍数前后位置上的两个数，只要不是5和7的倍数就是质数*/
 div.prime>ul>li {
   color: black;
 }
 
-div.prime>ul>li:nth-child(2),
+/* div.prime>ul>li:nth-child(2),
 div.prime>ul>li:nth-child(3),
 div.prime>ul>li:nth-child(6n+1),
 div.prime>ul>li:nth-child(6n-1) {
@@ -103,4 +109,14 @@ div.prime>ul>li:nth-child(1) {
 div.prime>ul>li:nth-child(5n),
 div.prime>ul>li:nth-child(7n) {
   color: black;
+}
+
+*/
+
+.prime li:nth-child(1),
+.prime li:nth-child(2n+4),
+.prime li:nth-child(3n+9),
+.prime li:nth-child(5n+25),
+.prime li:nth-child(7n+49) {
+  color: red;
 }
