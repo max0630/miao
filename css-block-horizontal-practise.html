@@ -9,7 +9,7 @@
     body {
       margin: 0;
     }
-
+    /*空栏底色*/
     section {
       background-color: red;
     }
@@ -22,10 +22,21 @@
       background-color: red;
     }
 
+    /*另一种办法是只用一个div*/
+    /*可以用视口宽度减去width宽度除以2就是左、右padding宽度*/
+    /*div {background-color: red;
+    padding-left: calc( 50% - 250px);
+    padding-right: calc( 50% - 250px);
+    width: 500px;
+    margin-left:0;
+    margin-right:0;}*/
+
+
+    /*定宽居右*/
     div.b {
       border: 3px solid blue;
       margin-left: auto;
-      margin-right: 0;
+      margin-right: 0; /*这一行可以省略*/
       width: 600px;
     }
 
@@ -63,6 +74,10 @@
       width: 800px;
     }
 
+    /*给他权重加大，不会被前面的类选择器覆盖，设置边距，就不用br了*/
+    /*div[class] {
+      margin-bottom: 20px;
+    }*/
   </style>
 </head>
 
