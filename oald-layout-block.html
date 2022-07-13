@@ -16,6 +16,7 @@
       width: 200px;
       height: 100vh;
       overflow: hidden;
+      box-sizing: border-box;
 
     }
 
@@ -66,19 +67,21 @@
       border: 1px solid;
       /*width: 663px;*/
       box-sizing: border-box;
-      width: 332px;
-      margin-top: -636px;
-      margin-left: 202px;
+      width: calc(100% - 600px);
+      margin-top: -100vh;
+      margin-left: 200px;
       height: 100vh;
       overflow: hidden;
+      min-width:330px;
     }
 
-    .sec2 .fantasy {
+    /*.sec2 .fantasy {
       border: 1px solid;
       margin-top: 0;
       margin-bottom: 0;
       height: 72px;
-    }
+      box-sizing: border-box;
+    }*/
 
     .fantasy h1,
     .sec3 h1,
@@ -92,20 +95,22 @@
     .sec2 .ol {
       overflow: scroll;
       border: 1px solid;
-      margin: 0;
+      /*margin: 0;*/
       padding: 18px;
+      box-sizing: border-box;
+      height: calc(100vh - 72px);
     }
 
     .sec3 {
       background-color: pink;
       border: 1px solid;
-      /*width: 663px;*/
       box-sizing: border-box;
       width: 200px;
-      margin-top: -634px;
-      margin-left: 534px;
+      margin-top: -100vh;
+      /*margin-right:200px;
+      margin-left:auto;*/
+      margin-left:calc(100% - 400px);
       height: 100vh;
-      overflow: hidden;
     }
 
 
@@ -113,13 +118,14 @@
     .sec4 {
       background-color: pink;
       border: 1px solid;
-      /*width: 663px;*/
       box-sizing: border-box;
       width: 200px;
-      margin-top: -634px;
-      margin-left: 734px;
+      margin-top: -100vh;
+      /*margin-left: auto;
+      margin-right:0;*/
+      margin-left: calc(100% - 200px);
       height: 100vh;
-      overflow: hidden;
+
     }
 
   </style>

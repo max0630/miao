@@ -8,12 +8,17 @@
   <style>
     body {
       margin: 20px;
+      /*页面周围留白*/
     }
-
+    /*全宽元素*/
     section.main {
       background-color: red;
-    }
+      /*可以给.a加背景色red，也可以写下面的*/
+      /*min-width:600px;
+      width:auto;*/
 
+    }
+    /*定宽居中*/
     div.a {
       background-color: red;
       margin: auto;
@@ -22,7 +27,10 @@
 
     div.b {
       border: 2px solid black;
+      /*加上下面这一句，则设置的width就是算上边框的宽度，为600px*/
+      /*box-sizing: border-box;*/
       max-width: 576px;
+      /*max-width，如果计算的宽度大于该值，仍取该宽度*/
       margin-left: auto;
       margin-right: auto;
       margin-top: 20px;

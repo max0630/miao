@@ -22,6 +22,8 @@
       background-color: rgb(160, 82, 45);
       width: 200px;
       height: 585px;
+      /*height: calc(100% - 80px);*/
+      /*需要给body和html指定高度为100%*/
       overflow: scroll;
     }
 
@@ -29,6 +31,8 @@
       background-color: rgb(0, 128, 128);
       margin-left: 200px;
       margin-top: -585px;
+      /*margin-top: calc(-100vh + 80px);*/
+      /*没写-100% + 80px 是因为垂直方向的margin是基于横向width计算的*/
       height: 585px;
       overflow: auto;
     }
