@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    section.header {
+      background-color: black;
+    }
+
+    div.header {
+      color: white;
+      background-color: black;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    div.a {
+      width: 600px;
+      margin: 16px auto 16px auto;
+    }
+
+    div.big {
+      width: 600px;
+      margin: 0 auto;
+      font-size:0;
+    }
+
+    div.big * {
+      font-size: 16px;
+    }
+    span.big {
+      display: inline-block;
+      width: 173px;
+      height: 34px;
+      border: 3px solid black;
+      background-color: pink;
+      text-align: center;
+      line-height: 34px;
+    }
+
+    span.big:nth-child(3n+1) {
+      margin-right:30px;
+      margin-top: 15px;
+    }
+
+    span.big:nth-child(3n+2) {
+      margin-right:30px;
+      margin-top: 15px;
+    }
+
+    span.big:hover {
+      background-color:red;
+    }
+
+
+    div.main:hover {
+      background-color: red;
+    }
+
+    /*块布局*/
+    section.main {
+      width: 600px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    div.main {
+      width: 173px;
+      height: 34px;
+      border: 3px solid black;
+      background-color: pink;
+      text-align: center;
+      line-height: 34px;
+      margin-top: 15px;
+
+    }
+
+    div.main:nth-child(n + 5) {
+      margin-left: 210px;
+    }
+
+    div.main:nth-child(n + 9) {
+      margin-left: 420px;
+    }
+
+    div.main:nth-child(4n + 5) {
+      margin-top: -205px;/*-220*/
+    }
+
+    div.main:hover {
+      background-color: red;
+    }
+
+    p {
+      width: 600px;
+      margin: auto;
+    }
+
+    .p1,
+    .p2,
+    .p3,
+    .p4 {
+      border: 1px dotted transparent;
+      border-bottom-color: black;
+    }
+
+    div.footer {
+      background-color: rgb(238, 138, 238);
+      text-align: center;
+      margin-bottom: 15px;
+      margin-top: 15px;
+
+    }
+
+  </style>
+
+<body>
+  <section class="header">
+    <div class="header">hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world
+      请调整浏览器窗口大小查看效果hello
+      world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果</div>
+  </section>
+  <div class="a">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+    页面主体
+    宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
+    宽度600px</div>
+  <!-- <section class="main"> -->
+  <div class="big">
+    <span class="big">宽180高40(包含边框)</span>
+    <span class="big">产品</span>
+    <span class="big">产品</span>
+    <span class="big">水平间隙30px</span>
+    <span class="big">产品</span>
+    <span class="big">产品</span>
+    <span class="big">垂直间隙15px</span>
+    <span class="big">产品</span>
+    <span class="big">产品</span>
+    <span class="big">边框宽度3px</span>
+    <span class="big">产品</span>
+    <span class="big">产品</span>
+  </div>
+  <!-- </section> -->
+  <section class="main">
+    <div class="main">宽180高40(包含边框)</div>
+    <div class="main">水平间隙30px</div>
+    <div class="main">垂直间隙15px</div>
+    <div class="main">边框宽度3px</div>
+    <div class="main">产品</div>
+    <div class="main">产品</div>
+    <div class="main">产品</div>
+    <div class="main">产品</div>
+    <div class="main">产品</div>
+    <div class="main">产品</div>
+    <div class="main">产品</div>
+    <div class="main">产品</div>
+  </section>
+  <p class="p1">link</p>
+  <p class="p2">link</p>
+  <p class="p3">link</p>
+  <p class="p4">link</p>
+  <p class="p5">link</p>
+  <div class="footer">
+    <p class="p6">©版权所有
+      <br>
+      本页所有布局均使用块元素
+    </p>
+  </div>
+<!-- &copy; -->
+
+
+</body>
