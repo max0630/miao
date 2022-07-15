@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -9,94 +8,128 @@
     body {
       margin: 0;
     }
-
-    section.header {
+/*顶部文字定宽居中*/
+    header {
       background-color: black;
     }
 
-    div.header {
+    header.header {
       color: white;
       background-color: black;
       max-width: 600px;
       margin: auto;
     }
 
-    div.a {
+    div.sec1 {
       width: 600px;
       margin: 16px auto 16px auto;
     }
 
-    div.big {
+/*内联块元素*/
+    div.inlineType1 {
       width: 600px;
       margin: 0 auto;
       font-size:0;
     }
 
-    div.big * {
+
+    div.inlineType1 div {
       font-size: 16px;
-    }
-    span.big {
       display: inline-block;
-      width: 173px;
-      height: 34px;
+      box-sizing:border-box;
+      width: 180px;
+      height: 40px;
       border: 3px solid black;
       background-color: pink;
       text-align: center;
       line-height: 34px;
     }
 
-    span.big:nth-child(3n+1) {
+    div.inlineType1 div:nth-child(3n+1) {
       margin-right:30px;
       margin-top: 15px;
     }
 
-    span.big:nth-child(3n+2) {
+    div.inlineType1 div:nth-child(3n+2) {
       margin-right:30px;
       margin-top: 15px;
     }
 
-    span.big:hover {
+    div.inlineType1 div:hover {
       background-color:red;
     }
 
 
-    div.main:hover {
-      background-color: red;
-    }
-
-    /*块布局*/
-    section.main {
+/*块布局*/
+    div.blockType {
       width: 600px;
       margin: 0 auto;
       margin-bottom: 20px;
     }
 
-    div.main {
-      width: 173px;
-      height: 34px;
+    div.blockType div {
+      width: 180px;
+      height: 40px;
+      box-sizing:border-box;
       border: 3px solid black;
-      background-color: pink;
+      background-color: rgb(252, 157, 173);
       text-align: center;
       line-height: 34px;
       margin-top: 15px;
 
     }
 
-    div.main:nth-child(n + 5) {
+    div.blockType div:nth-child(n + 5) {
       margin-left: 210px;
     }
 
-    div.main:nth-child(n + 9) {
+    div.blockType div:nth-child(n + 9) {
       margin-left: 420px;
     }
 
-    div.main:nth-child(4n + 5) {
+    div.blockType div:nth-child(4n + 5) {
       margin-top: -205px;/*-220*/
     }
-
-    div.main:hover {
+    div.blockType div:hover {
       background-color: red;
     }
+
+
+/*第三种写法，行内块*/
+    div.inlineType2 {
+      width:600px;
+      margin:20px auto;
+      overflow:hidden;
+      /*隐藏溢出的*/
+    }
+
+    ul.inlineType2 {
+      width:630px;
+      /*宽度比div大两个15px边距*/
+      margin:-8px -15px;
+      /*调整外边距*/
+      padding:0;
+      list-style:none;
+      font-size:0;
+    }
+
+    ul.inlineType2 li {
+      font-size:16px;
+      display: inline-block;
+      box-sizing:border-box;
+      width:180px;
+      height: 40px;
+      border: 3px solid;
+      margin: 8px 15px;
+      text-align: center;
+      border: 3px solid black;
+      background-color: rgb(247, 100, 124);
+    }
+
+    div.inlineType2 li:hover {
+      background-color: red;
+    }
+
 
     p {
       width: 600px;
@@ -116,51 +149,71 @@
       text-align: center;
       margin-bottom: 15px;
       margin-top: 15px;
-
     }
 
   </style>
 
 <body>
-  <section class="header">
-    <div class="header">hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world
+  <header>
+    <header class="header">hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world
       请调整浏览器窗口大小查看效果hello
-      world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果</div>
-  </section>
-  <div class="a">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+      world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果</header>
+  </header>
+  <div class="sec1">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
     页面主体
     宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
-    宽度600px</div>
-  <!-- <section class="main"> -->
-  <div class="big">
-    <span class="big">宽180高40(包含边框)</span>
-    <span class="big">产品</span>
-    <span class="big">产品</span>
-    <span class="big">水平间隙30px</span>
-    <span class="big">产品</span>
-    <span class="big">产品</span>
-    <span class="big">垂直间隙15px</span>
-    <span class="big">产品</span>
-    <span class="big">产品</span>
-    <span class="big">边框宽度3px</span>
-    <span class="big">产品</span>
-    <span class="big">产品</span>
+    宽度600px
   </div>
-  <!-- </section> -->
-  <section class="main">
-    <div class="main">宽180高40(包含边框)</div>
-    <div class="main">水平间隙30px</div>
-    <div class="main">垂直间隙15px</div>
-    <div class="main">边框宽度3px</div>
-    <div class="main">产品</div>
-    <div class="main">产品</div>
-    <div class="main">产品</div>
-    <div class="main">产品</div>
-    <div class="main">产品</div>
-    <div class="main">产品</div>
-    <div class="main">产品</div>
-    <div class="main">产品</div>
-  </section>
+
+  <div class="inlineType1">
+    <div>宽180高40(包含边框)</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>水平间隙30px</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>垂直间隙15px</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>边框宽度3px</div>
+    <div>产品</div>
+    <div>产品</div>
+  </div>
+
+  <div class="blockType">
+    <div>宽180高40(包含边框)</div>
+    <div>水平间隙30px</div>
+    <div>垂直间隙15px</div>
+    <div>边框宽度3px</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div >产品</div>
+  </div>
+
+  <div class="inlineType2">
+    <ul class="inlineType2">
+      <li>宽180高40(包含边框)</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>水平间隙30px</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>垂直间隙15px</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>边框宽度3px</li>
+      <li>产品</li>
+      <li>产品</li>
+    </ul>
+  </div>
+
+
+
   <p class="p1">link</p>
   <p class="p2">link</p>
   <p class="p3">link</p>
