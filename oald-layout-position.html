@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+
+    html, body, section {
+      height:100%;
+      margin:0;
+    }
+    section {
+      position:absolute;
+      font-size:0;
+      padding:0;
+      height:100%;
+      margin:0;
+      width:100%;
+    }
+
+    section > * {
+      box-sizing: border-box;
+      overflow:auto;
+      border:1px solid;
+      font-size: 16px;
+    }
+
+    section > div {
+      position:absolute;
+      left:150px;
+      right:300px;
+      bottom:0;
+      top:0;
+      right:300px;
+      background-color: rgb(255,248,220);
+      /*min-width: 330px;*/
+      /*加这句会变细*/
+
+    }
+
+    div > header {
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:50px;
+      border-bottom:1px solid;
+      box-sizing: border-box;
+    }
+
+    div > main {
+      position:absolute;
+      top:50px;
+      left:0;
+      right:0;
+      bottom:0;
+      border-top:1px solid;
+      box-sizing: border-box;
+    }
+
+    section > .aside1 {
+      position:absolute;
+      width: 150px;
+      left:0;
+      bottom:0;
+      top:0;
+      background-color: pink;
+    }
+
+    section > .aside2 {
+      position:absolute;
+      width: 150px;
+      right: 150px;
+      bottom:0;
+      top:0;
+      background-color: pink;
+    }
+
+    section > .aside3 {
+      position:absolute;
+      width: 150px;
+      right:0;
+      bottom:0;
+      top:0;
+      background-color: pink;
+    }
+
+  </style>
+</head>
+
+<body>
+<section>
+  <aside class="aside1">OALD</aside>
+  <div>
+    <header></header>
+    <main></main>
+  </div>
+  <aside class="aside2">vocabulary</aside>
+  <aside class="aside3">history</aside>
+</section>
+
+</body>
