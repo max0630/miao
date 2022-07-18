@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css-sprite</title>
+</head>
+<style>
+  div {
+    font-size: 18px;
+
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    margin:5px;
+  }
+
+  span[class^="icon"] {
+    display: inline-block;
+    background-image: url('images/sprite.png');
+    height:39px;
+    width: 39px;
+
+  }
+
+  .icon-focus {
+    background-position: 0 0;
+  }
+  .icon-tooltip {
+    background-position: -44px 0;
+  }
+  .icon-search {
+    background-position: -87px 0;
+  }
+  .icon-keyboard {
+    background-position: 0 40px;
+  }
+
+</style>
+<body>
+  <div>
+  <span class="icon-focus"></span><span>聚焦</span>
+  <br>
+  <span class="icon-tooltip"></span><span>语音搜索</span>
+  <br>
+  <span class="icon-search"></span><span>搜索</span>
+  <br>
+  <span class="icon-keyboard"></span><span>键盘</span>
+</div>
+</body>
+</html>
