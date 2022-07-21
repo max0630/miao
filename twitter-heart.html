@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>twitterlike</title>
+  <style>
+
+    .twitterlike {
+      height:100px;
+      width:100px;
+      border: 5px solid;
+      background-image: url("images/twitterlike.png");
+      /*transition默认为none，当不hover时没有效果*/
+    }
+    .twitterlike:hover {
+      background-position: -2800px;
+      transition: 1s steps(28);
+    }
+/*可以看到图片移动的效果*/
+    .twitterlike2 {
+      height: 100px;
+      width: 100px;
+      border: 5px solid;
+      position: relative;
+      margin: auto;
+    }
+      .twitterlike2 img {
+        position:absolute;
+        left:0;
+      }
+      img:hover {
+        position:absolute;
+        left:-2800px;
+        /*图片定宽了，就不要再指定right：0了不然会受限*/
+        /*0到auto或者auto到0是不能缓动的*/
+        transition: 1s steps(28);
+      }
+
+
+
+    input{
+      display: none;
+    }
+
+    input + .twitterlike3 {
+      cursor: pointer;
+      height:100px;
+      width:100px;
+      border: 5px solid;
+      position: relative;/*?*/
+      background-image: url("images/twitterlike.png");
+    }
+    /*input类型为checkbox时，checked属性表示input是否默认被选中*/
+    input:checked + .twitterlike3 {
+      background-position: -2800px;
+      transition: 1s steps(28);
+    }
+
+    label {
+      /*label是行内元素，设置宽高不生效*/
+      display: inline-block;
+      height: 100px;
+      width: 100px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="twitterlike"></div>
+  <div class="twitterlike2"><img src="images/twitterlike.png"></div>
+  <input type="checkbox" id="cb3" class="twitterlike3">
+  <!-- 这里用label标签，让他们关联起来 -->
+    <label for="cb3" class="twitterlike3"></label>
+  <div class="twitterlike3"></div>
+
+</body>
+</html>
