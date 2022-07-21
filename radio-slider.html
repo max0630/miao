@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ratio-slider</title>
+  <style>
+    section {
+      border: 5px solid;
+      position:  relative;
+    }
+    .imgs {
+      position:relative;
+      width:400px;
+      height:300px;
+      overflow: hidden;
+    }
+
+    .imgs img {
+      /*display: none;*/
+      /*换成透明度的转换*/
+      opacity: 0;
+      transition: 1s;
+      position:absolute;
+      width:100%;
+      height:100%;
+    }
+
+
+    section input {
+      position: relative;
+      top: 300px;
+      z-index: 8;
+      display: none;
+    }
+
+    .indicators {
+      position: absolute;
+      bottom:10px;
+      left:10px;
+    }
+
+    .indicators label {
+      margin: 3px; /*去掉边框*/
+      display:inline-block;
+      width: 10px;
+      height: 10px;
+      cursor: pointer;
+      background-color: grey;
+      font-size: 0;
+    }
+    .indicators label:hover {
+      background-color: red;
+    }
+
+    input:nth-child(1):checked ~ .imgs img:nth-child(1),
+    input:nth-child(2):checked ~ .imgs img:nth-child(2),
+    input:nth-child(3):checked ~ .imgs img:nth-child(3),
+    input:nth-child(4):checked ~ .imgs img:nth-child(4) {
+      /*display: block;*/
+      opacity: 1;
+    }
+/*选中input后，label保持红色选中*/
+    input:nth-child(1):checked ~ .indicators label:nth-child(1),
+    input:nth-child(2):checked ~ .indicators label:nth-child(2),
+    input:nth-child(3):checked ~ .indicators label:nth-child(3),
+    input:nth-child(4):checked ~ .indicators label:nth-child(4) {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <input type="radio" id="r1-1" name="radio1" checked>
+  <input type="radio" id="r1-2" name="radio1">
+  <input type="radio" id="r1-3" name="radio1">
+  <input type="radio" id="r1-4" name="radio1">
+
+
+  <div class="imgs">
+    <img src="https://travel.12306.cn/imgs/resources/uploadfiles/images/fcd7173f-7651-46e7-a126-bdc199e1f6f7_product_W572_H370.jpg" alt="a">
+    <img src="https://travel.12306.cn/imgs/resources/uploadfiles/images/1716878f-79a2-4db1-af8c-b9c2039f0b3c_product_W572_H370.jpg" alt="">
+    <img src="https://travel.12306.cn/imgs/resources/uploadfiles/images/6d77d0ea-53d0-4518-b7e9-e53795b4920c_product_W572_H370.jpg" alt="">
+    <img src="https://travel.12306.cn/imgs/resources/uploadfiles/images/b0c76b21-531b-4af4-a607-cf5672c72ded_product_W572_H370.jpg" alt="">
+  </div>
+
+  <div class="indicators">
+    <label for="r1-1"></label>
+    <label for="r1-2"></label>
+    <label for="r1-3"></label>
+    <label for="r1-4"></label>
+  </div>
+</section>
+</body>
+</html>
