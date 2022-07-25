@@ -5,103 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <!-- <link rel="stylesheet" href="css/tables.css"> -->
-  <style type="text/scss">
-    td,th {
-      padding: .5em;
-      text-align: left;
-    }
-    thead tr {
-      border-bottom: 2px solid #212529;
-    }
-    tr {
-      border-bottom: 1px solid #dee2e6;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      table-layout: auto;
-    }
-    /*still need to modify*/
-    .table {
-      border-collapse: collapse;
-      width: 100%;
-      table-layout: auto;
-    }
-
-    .table-sm {
-      td,th {
-        padding: .2em auto .2em auto;
-        text-align: left;
-      }
-     }
-
-     .table-striped {
-        tbody {
-          tr {
-            &:nth-child(-2n+3) {
-                background-color: #f2f2f2;
-              }
-          }
-          }
-        }
-    .table-hover {
-      & > tbody {
-        & > tr {
-          &:hover {
-            background-color: #ececec;
-          }
-        }
-      }
-    }
-
-
-    .table-bordered {
-      thead {
-        border-bottom: 2px solid #212529;
-      }
-      tr, th, td {
-        border: 1px solid #dee2e6;
-      }
-    }
-
-    .table-borderless {
-      * {
-      border:none;/*none优先级不太高，可以写hidden*/
-      }
-    }
-
-    .table-dark {
-      background-color: #212529;
-      color: #ffffff;
-      & tr {
-        border-bottom: 1px solid #373b3e;
-      }
-      & thead {
-        border-bottom: 2px solid #ffffff;
-      }
-      & > tbody {
-        & > tr {
-          &:hover {
-            background-color: #323539;
-          }
-        }
-      }
-      }
-
-  .table-striped-columns {
-    tbody {
-      tr {
-        td {
-          &:nth-child(2n) {
-            background-color: #f2f2f2;
-          }
-        }
-      }
-    }
-    }
-  </style>
+  <link rel="stylesheet" href="tables.css">
 </head>
 <body>
   <h3>Table</h3>
@@ -345,5 +249,4 @@
     </tbody>
   </table>
 </body>
-<script src="sass.link.min.js"></script>
 </html>

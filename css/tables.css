@@ -1,0 +1,143 @@
+.table {
+  display:table;
+  border-collapse:collapse;
+  width:100%;
+  table-layout:auto;
+}
+.table td,th {
+  padding:.5em;
+  text-align:left;
+}
+.table thead {
+  border-bottom: 2px solid #212529;
+}
+.table tr {
+  border-bottom:1px solid #dee2e6;
+}
+/*------*/
+.table-sm {
+  display:table;
+  border-collapse:collapse;
+  width:100%;
+  table-layout:auto;
+}
+.table-sm thead {
+  border-bottom: 2px solid #212529;
+}
+.table-sm tr {
+  border-bottom:1px solid #dee2e6;
+}
+.table-sm td,th {
+  padding:0.2em;
+  text-align:left;
+}
+/*-------*/
+.table-striped {
+  display:table;
+  border-collapse:collapse;
+  width:100%;
+  table-layout:auto;
+}
+.table-striped thead {
+  border-bottom: 2px solid #212529;
+}
+.table-striped tr {
+  border-bottom:1px solid #dee2e6;
+}
+.table-striped tbody tr:nth-child(-2n+3) {
+  background-color: #f2f2f2;
+}
+.table-striped td,th {
+  padding:0.5em;
+  text-align:left;
+}
+/*------*/
+.table-hover {
+  display:table;
+  border-collapse:collapse;
+  width:100%;
+  table-layout:auto;
+}
+.table-hover thead {
+  border-bottom: 2px solid #212529;
+}
+.table-hover tr {
+  border-bottom:1px solid #dee2e6;
+}
+.table-hover td,th {
+  padding:0.5em;
+  text-align:left;
+}
+.table-hover>tbody>tr:hover {
+  background-color: #ececec;
+}
+/*-------*/
+.table-bordered {
+  display:table;
+  border-collapse:collapse;
+  width:100%;
+  table-layout:auto;
+}
+.table-bordered thead {
+  border-bottom: 2px solid #212529;
+}
+.table-bordered tr,.table-bordered th, .table-bordered td {
+  border:1px solid #dee2e6;
+}
+.table-bordered td,th {
+  padding:0.5em;
+  text-align:left;
+}
+/*------*/
+.table-borderless {
+  display:table;
+  border-collapse:collapse;
+  width:100%;
+  table-layout:auto;
+}
+.table-borderless td, .table-borderless th {
+  padding:0.5em;
+  text-align:left;
+}
+/*------*/
+.table-dark {
+  display:table;
+  border-collapse:collapse;
+  width:100%;
+  table-layout:auto;
+  background-color: #212529;
+  color: #ffffff;
+}
+.table-dark thead {
+  border-bottom: 2px solid #ffffff;
+}
+.table-dark tr {
+  border-bottom:1px solid #373b3e;
+}
+.table-dark td,th {
+  padding:0.5em;
+  text-align:left;
+}
+.table-dark>tbody>tr:hover {
+  background-color: #323539;
+}
+/*------*/
+.table-striped-columns {
+  display:table;
+  border-collapse:collapse;
+  width:100%;
+  table-layout:auto;
+}
+.table-striped-columns thead {
+  border-bottom: 2px solid #212529;
+}
+.table-striped-columns tr {
+  border-bottom:1px solid #dee2e6;
+}
+.table-striped-columns tbody tr td:nth-child(2n) {
+  background-color: #f2f2f2;
+}
+.table-striped-columns td,th {
+  padding:0.5em;
+  text-align:left;
+}

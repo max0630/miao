@@ -4,73 +4,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>qq-mail-flex</title>
+  <title>qq-mail-float</title>
   <style>
-
-    html {
-      height: 100%;
-      width:100%;
-    }
-
-    body {
+    html, body, section {
       margin: 0;
       height: 100%;
       width:100%;
-    }
-/*用一个section放header和下面的.sec的div*/
-    section {
-      display: flex;
-      flex-wrap:wrap;
-      height:100%;
     }
 
     .header {
       background-color: rgb(95, 158, 160);
       height: 100px;
       width:100%;
+      float:left;/*leave a question*/
     }
 
     .sec {
-      display:flex;
       height:100%;
       width:100%;
-      flex-wrap:nowrap;
+      float: left;
     }
 
     .aside {
       background-color: rgb(160, 82, 45);
-      min-width: 200px;
-      overflow:auto;
-      height:100%;
+      width: 200px;
+      height: 100%;
+      overflow: auto;
+      float: left;
     }
 
     .main {
       background-color: rgb(0, 128, 128);
       overflow:auto;
-      height:100%;
-      flex-grow:1;
+      float: left;
+      height: 100%;
+      width: calc(100% - 200px);
     }
-/*another way to write */
-/*
-.sec {
-  flex: 1;
-  display: flex;
-  overflow: auto;
-}
-.aside {
-  background-color: rgb(160, 82, 45);
-  width:200px;
-  overflow:auto;
-  flex:none;
-}
-
-.main {
-  background-color: rgb(0, 128, 128);
-  overflow:auto;
-  flex:1;
-}
-*/
-/*写成flex:1意味着flex-grow:1; flex-shrink:1; flex-basis:0%;*/
 
 </style>
 </head>

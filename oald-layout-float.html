@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>oald-layout-float</title>
   <style>
     html{
       height:100%;
@@ -13,60 +13,58 @@
       margin:0;
       padding:0;
       height:100%;
+      width:100%;
     }
 
 
     section {
-      display:flex;
-      flex-wrap:nowrap;
       height:100%;
+      width: 100%;
     }
 
     .sec1 {
       background-color: pink;
       width:200px;
-      height:auto;
+      height:100%;
       overflow:auto;
       border:1px solid;
       box-sizing: border-box;
+      float: left;
     }
     .sec3 {
       background-color: pink;
       width:200px;
-      height:auto;
+      height:100%;
       border:1px solid;
       box-sizing: border-box;
+      float: left;
     }
     .sec4 {
       background-color: pink;
       width:200px;
-      height:auto;
+      height:100%;
       border:1px solid;
       box-sizing: border-box;
+      float: left;
     }
     .sec2 {
-      display: flex;
       background-color: tan;
-      flex-grow:1;
-      /*flex:1;没写这个是因为我不想要basis为0*/
-      width:330px;
+      width: calc(100% - 600px);
       border:1px solid;
       height:100%;
-
+      float: left;
       box-sizing: border-box;
-      flex-flow:column;
     }
 
     .fantasy {
       height: 60px;
-      flex: none;
       border-bottom:1px solid;
       box-sizing: border-box;
+      float:inline-start;
     }
 
     .ol {
       height:0;
-      flex-grow: 1;
       overflow:auto;
     }
 
