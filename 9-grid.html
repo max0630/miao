@@ -58,6 +58,23 @@
       z-index:5;
     }
 
+    .useFlex {
+      width: 170px;
+      list-style: none;
+        display: flex;
+      flex-wrap: wrap;
+    }
+    .useFlex li {
+      width: 50px;
+      height: 50px;
+      border: 5px solid blue;
+      margin-left: -5px;
+      margin-bottom: -5px;
+    }
+    .useFlex li:hover {
+      border: 5px solid red;
+      position:relative;
+    }
 /*not finished yet*/
     div {
       margin-left: 300px;
@@ -116,6 +133,19 @@
   </tbody>
 </table>
 
+<h3>flex</h3>
+<ul class="useFlex">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
 <h3>float</h3>
 <ul class="useFloat">
   <li></li>
@@ -128,6 +158,7 @@
   <li></li>
   <li></li>
 </ul>
+
 
 <div>订阅博客</div>
 
