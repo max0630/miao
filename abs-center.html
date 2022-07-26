@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>abs-center</title>
+  <style>
+    html, body{
+      height:100%;
+    }
+/*父元素相对定位，子元素绝对定位，距top和left为50%，负margin分别为宽高一半*/
+    .father1 {
+      width: 100%;
+      height: 200px;
+      border: 1px solid;
+      position: relative;
+    }
+    .children1 {
+      width: 100px;
+      height: 50px;
+      background-color: greenyellow;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -50px;
+      margin-top: -25px;
+    }
+
+    .father2 {
+      width: 100%;
+      height: 200px;
+      border: 1px solid;
+      position:relative;
+    }
+    .children2 {
+      width: 100px;
+      height: 50px;
+      background-color: greenyellow;
+      position: absolute;
+      left:0;
+      right: 0;
+      top:0;
+      bottom:0;
+      margin: auto;
+    }
+
+/*flex*/
+    .father3 {
+      display: flex;
+      width: 100%;
+      height: 200px;
+      border: 1px solid;
+    }
+    .children3 {
+      width: 100px;
+      height: 50px;
+      background-color: greenyellow;
+      margin: auto;
+    }
+
+
+    .father4{
+      width: 100%;
+      height: 200px;
+      border: 1px solid;
+      display: flex;
+      justify-content: center;  /* 弹性布局的左右居中对齐 */
+      align-items: center;  /*弹性布局的垂直居中对齐*/
+      }
+    .children4 {
+      width: 100px;
+      height: 50px;
+      background-color: greenyellow;
+      }
+
+
+    .father5 {
+      display: table;
+      height: 200px;
+      width: 100%;
+      border: 1px solid;
+
+    }
+    .children5 {
+      display: table-cell;
+      width: 100px;
+      height: 50px;
+      background-color: greenyellow;/*就一个单元格*/
+      /*position:absolute;
+      left: calc(50% - 50px);
+      top: calc(50% - 25px);*/
+      vertical-align: middle;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+<div class="father1">
+  <div class="children1">负margin</div>
+</div>
+<br>
+<div class="father2">
+  <div class="children2">margin:auto;</div>
+</div>
+<br>
+<div class="father3">
+  <div class="children3">flex</div>
+</div>
+<br>
+<div class="father4">
+  <div class="children4">flex</div>
+</div>
+<br>
+<div class="father5">
+  <div class="children5">table-cell</div>
+</div>
+</body>
+</html>
