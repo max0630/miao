@@ -207,9 +207,11 @@
   var y = Number(prompt('请输入整数y'))
   if (x > y) {
     console.log('>')
-  } else if(x = y) {
+  } else if(x == y) {
         console.log('=')
       } else console.log('<')
+/*x = y 就是把y值赋给x，赋值样式一个表达式，求值结果是被赋的值，如果y=2那求值结果也为2，把2转成布尔值是true*/
+/*如果是判断x == 2 可以写成2 == x*/
 </script>
 
 <script type="x" id="ch0104/06">
@@ -222,7 +224,7 @@
 <script type="x" id="ch0104/07">
   var a = Number(prompt('请输入幸运瓶盖数'))
   var b = Number(prompt('请输入鼓励瓶盖数'))
-  if (a == 10 || b == 20) {
+  if (a >= 10 || b >= 20) {
     console.log('1')
   } else console.log('0')
 </script>
@@ -251,12 +253,46 @@
   } else if (n % 7 == 0) {
     console. log('7')
   } else console.log('n')
+
+  var n = Number(prompt('请输入整数'))
+  if (n % 3 == 0) {
+    console.log(3)
+  }
+  if (n % 5 == 0) {
+    console.log(5)
+  }
+  if (n % 7 == 0) {
+    console.log(7)
+  }
+  if (n % 3 == 0 || n % 5 == 0 || n % 7 == 0){
+
+  } else console.log('n')
+
+
+  var n = Number(prompt('请输入整数'))
+  var flag = false
+  /*flag标志着是否进过if*/
+  if (n % 3 == 0) {
+    flag = true
+    console.log(3)
+  }
+  if (n % 5 == 0) {
+    flag = true
+    console.log(5)
+  }
+  if (n % 7 == 0) {
+    flag = true
+    console.log(7)
+  }
+  if (!flag){
+    console.log('n')
+  }
 </script>
 
 <script type="x" id="ch0104/10">
   var x = Number(prompt('请输入语文成绩'))
   var y = Number(prompt('请输入数学成绩'))
-  if ((x < 60 && y >= 60) || (x >= 60 && y < 60) {
+  if ((x < 60 && y >= 60) || (x >= 60 && y < 60)) {
     console.log('1')
   } else console.log('0')
 </script>
@@ -273,9 +309,9 @@
   var x = m / 1.2
   var y = 27 + 23 + m / 3
   if(x < y) {
-    console.log('WALK')
+    console.log('Walk')
   } else if (x > y) {
-    console.log('BIKE')
+    console.log('Bike')
   } else console.log('ALL')
 </script>
 
@@ -301,6 +337,19 @@
     } else if ( x <= 1000) {
       console.log('8')
       } else console.log(8 + Math.ceil((x - 1000) / 500) * 4)
+
+/*
+  var x = Number(prompt('请输入重量'))
+  var m = prompt('是否加急')
+  var price = 8
+  if (weight > 1000) {
+    price = price + Math.ceil((weight - 1000) / 500) * 4
+  }
+  if (emergency == 'y') {
+    price = price + 5
+  }
+  console.log(price)
+*/
 </script>
 
 <script type="x" id="ch0104/15">
@@ -309,15 +358,15 @@
   var c = Number(prompt('请输入c'))
   if (a > b) {
     if (b > c) {
-      console.log(a)
+      console.log(a,b,c)
     } else if (a > c) {
-      console.log(a)
-    } else console.log(c)
+      console.log(a,c,b)
+    } else console.log(c,a,b)
   } else if(b < c) {
-    console.log(c)
+    console.log(c,b,a)
   } else if(a > c) {
-    console.log(b)
-  } else console.log(b)
+    console.log(b,a,c)
+  } else console.log(b,c,a)
 /*
   abc: a>b b>c a
   acb: a>b b<c a>c
@@ -325,6 +374,33 @@
   cba: a<b b<c
   bac: b>a a>c
   bca: b>a c>a
+*/
+
+/*
+var a = Number(prompt('请输入a'))
+var b = Number(prompt('请输入b'))
+var c = Number(prompt('请输入c'))
+if (a >= b && a >= c) {
+  console.log(a)
+} else if (b >=a && b >= c) {
+  consoloe.log(b)
+} else if (c >= a && c >= b) {
+  console.log(c)
+}
+*/
+
+/*
+var max = 0
+if (a > max) {
+  max = a
+}
+if (b > max) {
+  max = b
+}
+if (c > max) {
+  max = c
+}
+consoloe.log(max)
 */
 </script>
 
@@ -344,8 +420,8 @@
 <script type="x" id="ch0104/17">
   var a = Number(prompt('请输入年份'))
   if ((a % 4 == 0 && a % 100 != 0) || (a % 400 == 0 && a % 3200 != 0)) {
-    console.log('yes')
-  }
+    console.log('Y')
+  } else console.log('N')
   /*能被4整除，但不能被100整除，能被400整除而不能被3200整除*/
 </script>
 
@@ -368,9 +444,9 @@
     console.log(Number(x + y))
   } else if (z == '-') {
     console.log(Number(x - y))
-  }else if (z == '*') {
+  } else if (z == '*') {
     console.log(Number(x * y))
-  }else if (z == '/') {
+  } else if (z == '/') {
     if (y == 0){
       console.log('Divided by zero')
     } else console.log(Number(x / y))
@@ -389,11 +465,9 @@
   if (delta == 0) {
     console.log('x1 = x2 =' + x1)
   } else if (delta > 0) {
-    console.log('x1 =' + x1.toFixed(5))
-    console.log('x2 =' + x2.toFixed(5))
+    console.log('x1 =' + x1.toFixed(5),'x2 =' + x2.toFixed(5))
   } else {
-    console.log('x1 = ' + Re.toFixed(5) + '+' + Im.toFixed(5) +'i')
-    console.log('x2 = ' + Re.toFixed(5) + '-' + Im.toFixed(5) + 'i')
+    console.log('x1 = ' + Re.toFixed(5) + '+' + Im.toFixed(5) +'i','x2 = ' + Re.toFixed(5) + '-' + Im.toFixed(5) + 'i')
   }
 </script>
 
@@ -403,3 +477,7 @@
   var y = Number(prompt('请输入y'))
   console.log(n - Math.ceil((1 / x ) * y))
 </script>
+
+
+
+<!-- -------------------5---------------------- -->
