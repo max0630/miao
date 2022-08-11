@@ -613,5 +613,155 @@ consoloe.log(max)
     m = m + 1
   }
   console.log(sum)
+</script>
 
+<script type="x" id="ch0105/11">
+  var k = Number(prompt('请输入k'))
+  var count = 1
+  var times1 = 0
+  var times2 = 0
+  var times3 = 0
+  while (count <= k) {
+    var x = Number(prompt('请输入第' + count + '个数'))
+    if (x == 1) {
+      times1 = times1 + 1
+    } else if (x == 5) {
+      times2 = times2 + 1
+    } else if (x == 10) {
+      times3 = times3 + 1
+    }
+    count = count + 1
+  }
+  console.log(times1 + '\n' + times2 + '\n' + times3)
+</script>
+
+<script type="x" id="ch0105/12">
+  var N = Number(prompt('请输入N'))
+  var m = Number(prompt('请输入m'))
+  var count = 1
+  var num = 0
+
+  while (count <= N) {
+    var x = Number(prompt('请输入第' + count + '个数'))
+    if (x == m) {
+      num = num + 1
+    } else {}
+    count = count + 1
+  }
+  console.log(num)
+</script>
+
+<script type="x" id="ch0105/13">
+  var a = Number(prompt('请输入a'))
+  var n = Number(prompt('请输入n'))
+  var count = 1
+  var sum = 1
+  while (count <= n) {
+    sum = sum * a
+    count = count + 1
+  }
+  console.log(sum)
+</script>
+
+<script type="x" id="ch0105/14">
+  var x = Number(prompt('请输入人口基数x'))
+  var n = Number(prompt('请输入n'))
+
+  var sum = x * (0.001 * n + 1)
+
+  console.log(sum.toFixed(4))
+<!-- 期待13.1306 但实际输出为13.1300 -->
+</script>
+
+<script type="x" id="ch0105/15">
+  var R = Number(prompt('请输入复合年利率R'))
+  var M = Number(prompt('请输入本金M'))
+  var Y = Number(prompt('请输入年份Y'))
+  var sum = M
+  var count = 1
+  while (count <= Y) {
+
+    sum = (1 + R * 0.01) * sum
+    count = count + 1
+  }
+  console.log(Math.floor(sum))
+</script>
+
+<script type="x" id="ch0105/16">
+  var N = Number(prompt('请输入年薪N'))
+  var K = Number(prompt('请输入K'))
+  var deposit = N
+  var price = 200
+
+  for (var M = 1; deposit <= price;M = M + 1) {
+    deposit = N * M
+    price = 200 * (1 + K / 100 * M)
+  }
+  if (M <= 20) {
+    console.log(M)
+  } else console.log('Impossible')
+</script>
+
+<script type="x" id="ch0105/17">
+  var k = Number(prompt('请输入正整数k') - 2)
+  var f1 = 1
+  var f2 = 1
+  for(var i = 1; i <= k; i = i + 1) {
+    var t = f1
+    f1 = f2
+    f2 = t + f2
+  }
+  console.log(f2)
+</script>
+
+<script type="x" id="ch0105/18">
+  var n = Number(prompt('请输入整数n'))
+  var x1 = Number(prompt('输入鸡尾酒总病例数'))
+  var x2 = Number(prompt('输入鸡尾酒改进病例数'))
+  var count = 1
+  while (count < n) {
+    var y1 = Number(prompt('输入新疗法总病例数'))
+    var y2 = Number(prompt('输入新疗法改进病例数'))
+    if ((y2 / y1 - x2 / x1) > 0.05) {
+      console.log('better')
+    } else if ((x2 / x1 - y2 / y1) > 0.05) {
+      console.log('worse')
+    } else console.log('same')
+    count = count + 1
+  }
+</script>
+
+<script type="x" id="ch0105/19">
+  var n = Number(prompt('请输入整数n'))
+  var count = 1
+  var t = 0
+  while(count <= n) {
+    var x = Number(prompt('输入x'))
+    var y = Number(prompt('输入y'))
+    var z = Number(prompt('输入z'))
+    t = Math.sqrt(x ** 2 + y ** 2) / 50 * 2 + z * 1.5
+    count = count + 1
+  }
+  console.log(Math.ceil(t))
+</script>
+
+<script type="x" id="ch0105/20">
+
+
+</script>
+
+<script type="x" id="ch0105/21">
+  var n = Number(prompt('请输入N'))
+  while(n != 1) {
+    if (n % 2 != 0) {
+      n = n * 3 + 1
+      console.log(n + '*3+1=' + (n * 3 + 1))
+      n = n / 2
+      console.log((n * 3 + 1) + '/2=' + n / 2)
+    } else if (n % 2 == 0) {
+      n = n / 2
+      console.log(n + '/2=' + n / 2)
+    }
+  }
+  console.log('End')
 </script>
