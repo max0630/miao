@@ -465,9 +465,9 @@ consoloe.log(max)
   if (delta == 0) {
     console.log('x1 = x2 =' + x1)
   } else if (delta > 0) {
-    console.log('x1 =' + x1.toFixed(5),'x2 =' + x2.toFixed(5))
+    console.log('x1 =' + x1.toFixed(5) + ';x2 =' + x2.toFixed(5))
   } else {
-    console.log('x1 = ' + Re.toFixed(5) + '+' + Im.toFixed(5) +'i','x2 = ' + Re.toFixed(5) + '-' + Im.toFixed(5) + 'i')
+    console.log('x1 = ' + Re.toFixed(5) + '+' + Im.toFixed(5) +'i' + ';x2 = ' + Re.toFixed(5) + '-' + Im.toFixed(5) + 'i')
   }
 </script>
 
@@ -493,3 +493,125 @@ consoloe.log(max)
   console.log((sumAge / n).toFixed(2))
 </script>
 
+<script type="x" id="ch0105/02">
+  var sumBalance = 0
+  var count = 1
+  while (count <= 12) {
+    var balance = Number(prompt('请输入第' + count + '个月的月末结余'))
+    sumBalance = sumBalance + balance
+    count = count + 1
+  }
+  console.log('$' + (sumBalance / 12).toFixed(2))
+</script>
+
+<script type="x" id="ch0105/03">
+  var n = Number(prompt('请输入样本容量n'))
+  var sum = 0
+  var count = 1
+  while (count <= n) {
+    var x = Number(prompt('请输入第' + count + '个数'))
+    sum = sum + x
+    count = count + 1
+  }
+  console.log((sum / n).toFixed(4))
+</script>
+
+<script type="x" id="ch0105/04">
+  var n = Number(prompt('请输入n'))
+  var sum = 0
+  var count = 1
+  while (count <= n) {
+    var x = Number(prompt('请输入第' + count + '个数'))
+    sum = sum + x
+    count = count + 1
+  }
+  console.log(sum + ' ' +(sum / n).toFixed(5))
+</script>
+
+<script type="x" id="ch0105/05">
+  var n = Number(prompt('请输入人数n'))
+  var max= 0
+  var count = 1
+  while (count <= n) {
+    var x = Number(prompt('请输入第' + count + '个人的成绩'))
+    if (x > max) {
+      max = x
+    }
+    count = count + 1
+  }
+  console.log(max)
+</script>
+
+<script type="x" id="ch0105/06">
+  var n = Number(prompt('请输入n'))
+  var max= 0
+  var count = 1
+  var min = 0
+  while (count <= n) {
+    var x = Number(prompt('请输入第' + count + '个数值'))
+    if (x > max) {
+      max = x
+    } else if (x < min) {
+      min = x
+    }
+    count = count + 1
+  }
+  console.log(max - min)
+</script>
+
+<script type="x" id="ch0105/07">
+  var n = Number(prompt('请输入n'))
+  var count = 1
+  var sum1 = 0
+  var sum2 = 0
+  var sum3 = 0
+  while (count <= n) {
+    var x = Number(prompt('请输入第' + count + '天金牌数'))
+    var y = Number(prompt('请输入第' + count + '天银牌数'))
+    var z = Number(prompt('请输入第' + count + '天铜牌数'))
+    sum1 = sum1 + x
+    sum2 = sum2 + y
+    sum3 = sum3 + z
+    count = count + 1
+  }
+  console.log(sum1 + ' ' + sum2 + ' ' + sum3 + ' ' + Number(sum1 + sum2 + sum3))
+</script>
+
+<script type="x" id="ch0105/08">
+  var n = Number(prompt('请输入n'))
+  var count = 1
+  var y = (n - 2) * 180
+
+  while (count < n) {
+    var x = Number(prompt('请输入第' + count + '个内角度数'))
+    y = y - x
+    count = count + 1
+  }
+  console.log(y)
+</script>
+
+<script type="x" id="ch0105/09">
+  var m = Number(prompt('请输入m'))
+  var n = Number(prompt('请输入n'))
+  var sum = 0
+  while (m <= n) {
+    if (m % 2 == 0) {
+    } else sum = sum + m
+    m = m + 1
+  }
+  console.log(sum)
+</script>
+
+<script type="x" id="ch0105/10">
+  var m = Number(prompt('请输入m'))
+  var n = Number(prompt('请输入n'))
+  var sum = 0
+  while (m <= n) {
+    if (m % 17 == 0) {
+      sum = sum + m
+    } else{}
+    m = m + 1
+  }
+  console.log(sum)
+
+</script>
