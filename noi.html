@@ -253,7 +253,7 @@
   } else if (n % 7 == 0) {
     console. log('7')
   } else console.log('n')
-
+/*
   var n = Number(prompt('请输入整数'))
   if (n % 3 == 0) {
     console.log(3)
@@ -287,6 +287,7 @@
   if (!flag){
     console.log('n')
   }
+  */
 </script>
 
 <script type="x" id="ch0104/10">
@@ -324,7 +325,7 @@
     console.log(y1)
   } else if (x < 10) {
     console.log(y2)
-  } else console.log(y3)
+  } else console.log(y3.toFixed(3))
 </script>
 
 <script type="x" id="ch0104/14">
@@ -632,7 +633,7 @@ consoloe.log(max)
     }
     count = count + 1
   }
-  console.log(times1 + '\n' + times2 + '\n' + times3)
+  console.log(times1,times2,times3)
 </script>
 
 <script type="x" id="ch0105/12">
@@ -754,13 +755,15 @@ consoloe.log(max)
   var n = Number(prompt('请输入N'))
   while(n != 1) {
     if (n % 2 != 0) {
-      n = n * 3 + 1
       console.log(n + '*3+1=' + (n * 3 + 1))
-      n = n / 2
+      n = n * 3 + 1
       console.log((n * 3 + 1) + '/2=' + n / 2)
-    } else if (n % 2 == 0) {
       n = n / 2
+
+    } else if (n % 2 == 0) {
       console.log(n + '/2=' + n / 2)
+      n = n / 2
+
     }
   }
   console.log('End')
