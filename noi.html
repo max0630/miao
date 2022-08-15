@@ -237,24 +237,6 @@
 </script>
 
 <script type="x" id="ch0104/09">
-  /*
-  var n = Number(prompt('请输入整数'))
-  if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0) {
-    console.log('3 5 7')
-  } else if (n % 3 == 0 && n % 5 == 0) {
-    console.log('3 5')
-  } else if (n % 3 == 0 && n % 7 == 0) {
-    console.log('3 7')
-  } else if (n % 5 == 0 && n % 7 == 0) {
-    console.log('5 7')
-  } else if (n % 3 == 0) {
-    console.log('3')
-  } else if (n % 5 == 0) {
-    console.log('5')
-  } else if (n % 7 == 0) {
-    console. log('7')
-  } else console.log('n')
-*/
   var n = Number(prompt('请输入整数'))
   if (n % 3 == 0) {
     console.log(3)
@@ -268,27 +250,6 @@
   if (n % 3 == 0 || n % 5 == 0 || n % 7 == 0){
 
   } else console.log('n')
-
-/*
-  var n = Number(prompt('请输入整数'))
-  var flag = false
-  /*flag标志着是否进过if*/
-  if (n % 3 == 0) {
-    flag = true
-    console.log(3)
-  }
-  if (n % 5 == 0) {
-    flag = true
-    console.log(5)
-  }
-  if (n % 7 == 0) {
-    flag = true
-    console.log(7)
-  }
-  if (!flag){
-    console.log('n')
-  }
-  */
 </script>
 
 <script type="x" id="ch0104/10">
@@ -355,30 +316,6 @@
 </script>
 
 <script type="x" id="ch0104/15">
-  var a = Number(prompt('请输入a'))
-  var b = Number(prompt('请输入b'))
-  var c = Number(prompt('请输入c'))
-  if (a > b) {
-    if (b > c) {
-      console.log(a,b,c)
-    } else if (a > c) {
-      console.log(a,c,b)
-    } else console.log(c,a,b)
-  } else if(b < c) {
-    console.log(c,b,a)
-  } else if(a > c) {
-    console.log(b,a,c)
-  } else console.log(b,c,a)
-/*
-  abc: a>b b>c a
-  acb: a>b b<c a>c
-  cab: a>b b<c a<c
-  cba: a<b b<c
-  bac: b>a a>c
-  bca: b>a c>a
-*/
-
-/*
 var a = Number(prompt('请输入a'))
 var b = Number(prompt('请输入b'))
 var c = Number(prompt('请输入c'))
@@ -389,21 +326,6 @@ if (a >= b && a >= c) {
 } else if (c >= a && c >= b) {
   console.log(c)
 }
-*/
-
-/*
-var max = 0
-if (a > max) {
-  max = a
-}
-if (b > max) {
-  max = b
-}
-if (c > max) {
-  max = c
-}
-consoloe.log(max)
-*/
 </script>
 
 <script type="x" id="ch0104/16">
@@ -450,7 +372,7 @@ consoloe.log(max)
     console.log(Number(x * y))
   } else if (z == '/') {
     if (y == 0){
-      console.log('Divided by zero')
+      console.log('Divided by zero!')
     } else console.log(Number(x / y))
   } else console.log('Invalid operator')
 </script>
@@ -467,9 +389,9 @@ consoloe.log(max)
   if (delta == 0) {
     console.log('x1 = x2 =' + x1)
   } else if (delta > 0) {
-    console.log('x1 =' + x1.toFixed(5) + ';x2 =' + x2.toFixed(5))
+    console.log('x1=' + x1.toFixed(5) + ';x2=' + x2.toFixed(5))
   } else {
-    console.log('x1 = ' + Re.toFixed(5) + '+' + Im.toFixed(5) +'i' + ';x2 = ' + Re.toFixed(5) + '-' + Im.toFixed(5) + 'i')
+    console.log('x1=' + Re.toFixed(5) + '+' + Im.toFixed(5) +'i' + ';x2 =' + Re.toFixed(5) + '-' + Im.toFixed(5) + 'i')
   }
 </script>
 
@@ -669,11 +591,9 @@ consoloe.log(max)
 <script type="x" id="ch0105/14">
   var x = Number(prompt('请输入人口基数x'))
   var n = Number(prompt('请输入n'))
-  for (var i = 0; i < year; i ++) {
+  for (var i = 0; i < n; i ++) {
     x = x * 1.001
   }
-  /*var sum = x * (0.001 * n + 1)*/
-
   console.log(x.toFixed(4))
 </script>
 
@@ -753,7 +673,6 @@ consoloe.log(max)
   var i = 1
   var h = Number(prompt('请输入高度h'))
   var s = 0
-  debugger
   while(i <= 10) {
       if (i == 1) {
           s = h
@@ -765,9 +684,7 @@ consoloe.log(max)
           i++
       }
   }
-  console.log(s)
-  console.log(h)
-
+  console.log(s.toFixed(4),h.toFixed(6))
 </script>
 
 <script type="x" id="ch0105/21">
@@ -778,26 +695,40 @@ consoloe.log(max)
       n = n * 3 + 1
       console.log(n + '/2=' + n / 2)
       n = n / 2
-
     } else if (n % 2 == 0) {
       console.log(n + '/2=' + n / 2)
       n = n / 2
-
     }
   }
   console.log('End')
+/*
+  var n = Number(prompt())
+  while(n !== 1) {
+    if(n % 2 == 1) {
+      var next = n * 3 + 1
+      var str = n + '*3+1=' + next
+    } else if (n % 2 == 0) {
+      var next = n / 2
+      var str = n + '/2=' + next
+    }
+    console.log(str)
+    n = next
+  }
+*/
 </script>
 
 <script type="x" id="ch0105/22">
   var i = 1
   var sum = 0
   var mom = 0
+  var 不够花 = false
   while(i <= 12) {
     var m = Number(prompt('请输入预算m'))
 
     if ((sum + 300 - m) < 0) {
       console.log('-' + i)
       i++
+      不够花 = true
     } else if ((sum + 300 - m) < 100) {
       sum = sum + 300 - m
       i++
@@ -807,9 +738,10 @@ consoloe.log(max)
       i++
     }
   }
-  var end = sum + mom * 1.2
-  console.log(end)
-
+  if (!不够花) {
+    var end = sum + mom * 1.2
+    console.log(end)
+  }
 </script>
 
 <script type="x" id="ch0105/23">
@@ -829,23 +761,35 @@ consoloe.log(max)
 </script>
 
 <script type="x" id="ch0105/24">
-  var count = 100
-  var nas7 = Number(count.toString(7))
-  var nas9 = Number(count.toString(9))
-  var nas7ge = nas7 % 10
-  var nas7shi = (nas7 % 100 - nas7 % 10) / 10
-  var nas7bai = Math.trunc(nas7 / 100 )
-  var nas9ge = nas9 % 10
-  var nas9shi = (nas9 % 100 - nas9 % 10) / 10
-  var nas9bai = Math.trunc(nas9 / 100 )
-  while (count <= 999) {
-    if (nas7ge == nas9bai && nas7shi == nas9shi && nas7bai == nas9ge) {
-      console.log(count)
-    } else count = count + 1
+  var n = Number(prompt())
+  var 最大血压正常时间 = 0
+
+  var 当下累计的连续血压正常时间 = 0
+
+  for (var i = 0; i < n; i++) {
+    var high = Number(prompt())
+    var low = Number(prompt())
+    var 正常 = false
+
+    if (high >= 90 && high <= 140 && low >= 60 && low <= 90) {
+      正常 = true
+    }
+
+    if (!正常) {
+      当下累计的连续血压正常时间 = 0
+    } else {
+      当下累计的连续血压正常时间++
+      if (当下累计的连续血压正常时间 > 最大血压正常时间) {
+        最大血压正常时间 = 当下累计的连续血压正常时间
+      }
+    }
   }
+
+  console.log(最大血压正常时间)
 </script>
 
 <script type="x" id="ch0105/25">
+ /*
   var count = 200
   while (count <= 999) {
     var nas7 = Number(count.toString(7))
@@ -858,9 +802,30 @@ consoloe.log(max)
     var nas9bai = Math.trunc(nas9 / 100 )
     if (nas7ge == nas9bai && nas7shi == nas9shi && nas7bai == nas9ge) {
       console.log(count)
+      console.log(nas7)
+      console.log(nas9)
     }
     count = count + 1
   }
+81是九进制下的100
+*/
+
+for (var x = 81; x <= 342 ; x++) {
+  var a7 = x % 7 //7进制个位数
+  var b7 = (x - a7) / 7 % 7 //七进制右数第二位
+  var c7 = (x - a7 - b7 * 7) / 7 / 7 % 7
+
+  var a9 = x % 9 //7进制个位数
+  var b9 = (x - a9) / 9 % 9 //七进制右数第二位
+  var c9 = (x - a9 - b9 * 9) / 9 / 9 % 9
+
+  if (a7 == c9 && a9 == c7 && b7 == b9){
+    console.log(x)
+    console.log('' + c7 + b7 + a7)
+    console.log('' + c9 + b9 + a9)
+    break
+  }
+}
 </script>
 
 <script type="x" id="ch0105/26">
@@ -900,6 +865,7 @@ consoloe.log(max)
     console.log(k)
     m = (m - k) / 10
   }
+  /*换成do while，让0也能走一次循环*/
 </script>
 
 <script type="x" id="ch0105/29">
@@ -911,7 +877,8 @@ consoloe.log(max)
       j = j + k
       m = (m - k) / 10
     }
-  console.log(j)
+
+  console.log(Number(j))
   } else if (m < 0) {
     m = m * (-1)
     while (m > 0) {
@@ -919,9 +886,8 @@ consoloe.log(max)
       j = j + k
       m = (m - k) / 10
     }
-    console.log('-' + j)
+    console.log(-Number(j))
   }
-/*0还没解决*/
 </script>
 
 <script type="x" id="ch0105/30">
@@ -944,7 +910,37 @@ consoloe.log(max)
 </script>
 
 <script type="x" id="ch0105/31">
+  var n = Number(prompt()) // 灯的数量
+  var m = Number(prompt()) // 人的数量
 
+  var result = ''
+  var 是否遇到了第一个关着的灯 = false
+
+  // 遍历每一个灯
+  for (var i = 1; i <= n; i++) {
+
+    var open = true // 这个灯一开始是打开状态
+
+    // 遍历每个小于灯的编号的人,因为灯的编号要是人的编号的倍数才有可能进if
+    for (var j = 1; j <= m && j <= i; j++) {
+      // 如果灯的编号是人的编号的倍数
+      if (i % j == 0) {
+        open = !open // 则切换灯的状态
+      }
+    }
+
+    if (!open) { // 如果这个灯是关的着
+
+      if (!是否遇到了第一个关着的灯) {
+        是否遇到了第一个关着的灯 = true
+        result += (i)
+      } else {
+        result += (',' + i)
+      }
+    }
+  }
+
+  console.log(result)
 </script>
 
 <script type="x" id="ch0105/32">
@@ -1022,27 +1018,29 @@ consoloe.log(max)
 </script>
 
 <script type="x" id="ch0105/37">
-  var m = Number(prompt('请输入m'))
-  var n = Number(prompt('请输入n'))
-  var x = Number(prompt('请输入x'))
-/*----------------------------------------------------------*/
-   == M
-   addpower = M / n
-  n + addpower
+
 </script>
 
 <script type="x" id="ch0105/38">
-  var group = Number(prompt('请输入组数'))
-  var n = Number(prompt('请输入n'))
-  var i = 1
-  var x = Number(prompt('请输入x'))
-  while((i <= (x+1)) && (n >= 0)) {
-    console.log(n * x)
-    n = n - 1
-    x = Number(prompt('请输入x'))
-    i = i + 1
-  }
-  /*第三组------------------------------------------*/
+  var n = Number(prompt('组数'))
+
+  for (var i = 1; i <= n; i++) {
+      var m = Number(prompt('最高次幂'))
+      var M = m //保存最高次幂
+
+      if ( m == 0) {
+          var c = Number(prompt())
+          console.log(0)
+      } else {
+          for (var j = 0; j <= M; j++) {
+              var c = Number(prompt('输入非负整数Cn'))
+              if (j !== M) {
+                console.log(c * m)
+              }
+              m--
+            }
+        }
+      }
 </script>
 
 <script type="x" id="ch0105/39">
@@ -1090,7 +1088,30 @@ console.log(count)
     var R = Number(prompt('请输入R'))
     var i = L
     var count = 0
+
+    for (var i = L; i <= R; i++) {
+      var x = i
+      //把x拆解
+      while ( x > 0) {
+          var d = x % 10
+          if ( d == 2) {
+              count++
+              //如果为1，计数加1
+          }
+          x = (x - d) / 10
+      }
+    }
+    console.log(count)
+
+  /*
+  var num = 1
+  while(num <= 2) {
+    var L = Number(prompt('请输入L'))
+    var R = Number(prompt('请输入R'))
+    var i = L
+    var count = 0
     while(i >= L && i <= R) {
+
       if (i % 10 == 2) {
         count ++
       }
@@ -1108,6 +1129,7 @@ console.log(count)
     console.log(count)
     num ++
   }
+  */
 </script>
 
 <script type="x" id="ch0105/42">
