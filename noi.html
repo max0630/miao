@@ -391,7 +391,7 @@ if (a >= b && a >= c) {
   } else if (delta > 0) {
     console.log('x1=' + x1.toFixed(5) + ';x2=' + x2.toFixed(5))
   } else {
-    console.log('x1=' + Re.toFixed(5) + '+' + Im.toFixed(5) +'i' + ';x2 =' + Re.toFixed(5) + '-' + Im.toFixed(5) + 'i')
+    console.log('x1=' + Re.toFixed(5) + '+' + Im.toFixed(5) +'i' + ';x2=' + Re.toFixed(5) + '-' + Im.toFixed(5) + 'i')
   }
 </script>
 
@@ -684,7 +684,7 @@ if (a >= b && a >= c) {
           i++
       }
   }
-  console.log(s.toFixed(4),h.toFixed(6))
+  console.log(s.toFixed(4),h.toFixed(7))
 </script>
 
 <script type="x" id="ch0105/21">
@@ -1082,26 +1082,26 @@ console.log(count)
 </script>
 
 <script type="x" id="ch0105/41">
-  var num = 1
-  while(num <= 2) {
-    var L = Number(prompt('请输入L'))
-    var R = Number(prompt('请输入R'))
-    var i = L
-    var count = 0
+  var start = Number(prompt())
+  var end = Number(prompt())
 
-    for (var i = L; i <= R; i++) {
-      var x = i
-      //把x拆解
-      while ( x > 0) {
-          var d = x % 10
-          if ( d == 2) {
-              count++
-              //如果为1，计数加1
-          }
-          x = (x - d) / 10
+  var count = 0
+
+  // 对于1到n的每个数
+  for (var i = start; i <= end; i++) {
+    var x = i
+
+    // 将x拆解为其每位上的数
+    while(x > 0) {
+      var d = x % 10
+      if (d == 2) { // 如果是1,则计数加1
+        count++
       }
+      x = (x - d) / 10
     }
-    console.log(count)
+  }
+
+  console.log(count)
 
   /*
   var num = 1
