@@ -1133,43 +1133,36 @@ console.log(count)
 </script>
 
 <script type="x" id="ch0105/42">
-  var result = ''
-    var H = Number(prompt('请输入高'))
-    var W = Number(prompt('请输入宽'))
-    var S = prompt('请输入符号')
-    var Y = prompt('空心or实心')
-    var j = 0
-    var i = 0
-    if (Y == '1') {
-      while(j < H) {
-        while(i < W) {
-          result = result + S
-          i++
-        }
-        result = result + '\n'
-        j++
-        i = 0
+  var H = Number(prompt('请输入高（行数）'))
+  var W = Number(prompt('请输入宽（列数）'))
+  var S = prompt('请输入符号')
+  var Y = prompt('空心or实心')
+  var j = 0
+  var i = 0
+  if (Y == '1') {
+    for ( var i = 1; i <= H; i++) {
+      var result = ''
+      for ( var j = 1; j <= W; j++) {
+        result += S
       }
       console.log(result)
+      result += '\n'
     }
-    var count = 0
-    if (Y == '0'){
-      while(j < H) {
-        while(i < W ) {
-          if (i == 0 || i == (H - 1) || (j == 0) || j == (W - 1)) {
-            result = result + S
-            i++
-          } else {
-            result = result + ' '
-            i++
-          }
+  }
+
+  if (Y == '0') {
+    for ( var i = 1; i <= H; i++) {
+      var result = ''
+      for ( var j = 1; j <= W; j++) {
+        if (j == 1 || j == W || i == 1 || i == H) {
+          result += S
         }
-      result = result + '\n'
-      j++
-      i = 0
-    }
+        else result += ' '
+      }
       console.log(result)
-    }
+      result += '\n'
+  }
+  }
 </script>
 
 <script type="x" id="ch0105/43">
