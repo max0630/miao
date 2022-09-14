@@ -18,26 +18,19 @@ var max0630 = {
     return newAry
   },
 
+  compact: function (array) {
+    var newAry = []
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] == 0 || array[i] == false || array[i] == '' || array[i] == null || array[i] == undefined || array[i] !== array[i]) {
+
+      } else newAry.push(array[i])
+    }
+    return newAry
+  },
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  compact: function () { },
 
   fill: function () { },
 
