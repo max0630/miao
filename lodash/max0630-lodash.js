@@ -73,6 +73,35 @@ var max0630 = {
     return newAry
   },
 
+  /*
+  flattenDeep: function flattenDeep(array) {
+    if (array == null) {
+      return
+    }
+    for (var i = 0; i < array.length; i++) {
+      var newAry = []
+      if (Array.isArray(array[i])) {
+        var t = array[i]
+        for (var j = 0; j < t.length; j++) {
+          newAry.push(t[j])
+        }
+      } else {
+        newAry.push(array[i])
+        array.shift()
+      }
+    }
+    return flattenDeep(newAry)
+  },
+*/
 
+  fromPairs: function (pairs) {
+    var map = {}
+    for (var i = 0; i < pairs.length; i++) {
+      var t = pairs[i]
+      var str = t[0]
+      map[str] = t[1]
+    }
+    return map
+  }
 
 }
