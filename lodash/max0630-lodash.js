@@ -28,8 +28,6 @@ var max0630 = {
     return newAry
   },
 
-  difference: function (array, [values]) {
-  },
 
   drop: function (array, n = 1) {
     var count = 0
@@ -73,6 +71,8 @@ var max0630 = {
       } else newAry.push(array[i])
     }
     return newAry
-  }
+  },
+
+
 
 }
