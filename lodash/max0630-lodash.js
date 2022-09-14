@@ -47,7 +47,7 @@ var max0630 = {
       if (array == null) {
         return array
       }
-      array.unshift()
+      array.pop()
       count++
     }
     return array
