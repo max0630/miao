@@ -102,6 +102,20 @@ var max0630 = {
       map[str] = t[1]
     }
     return map
-  }
+  },
 
+  head: function (array) {
+    if (array == null) {
+      return undefined
+    } else return array[0]
+  },
+
+  indexOf: function (array, value, fromIndex = 0) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] == value) {
+        return i
+      }
+    }
+    return -1
+  }
 }
