@@ -117,5 +117,15 @@ var max0630 = {
       }
     }
     return -1
-  }
+  },
+
+  initial: function (array) {
+    var newAry = []
+    for (var i = 0; i < array.length - 1; i++) {
+      newAry.push(array[i])
+    }
+    return newAry
+  },
+
+
 }
