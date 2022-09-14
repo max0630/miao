@@ -28,10 +28,51 @@ var max0630 = {
     return newAry
   },
 
+  difference: function (array, [values]) {
+  },
 
+  drop: function (array, n = 1) {
+    var count = 0
+    while (count != n) {
+      if (array == null) {
+        return array
+      }
+      array.shift()
+      count++
+    }
+    return array
+  },
 
+  dropRight: function (array, n = 1) {
+    var count = 0
+    while (count != n) {
+      if (array == null) {
+        return array
+      }
+      array.unshift()
+      count++
+    }
+    return array
+  },
 
+  fill: function (array, value, start = 0, end = array.length) {
+    for (var i = start; i < end; i++) {
+      array[i] = value
+    }
+    return array
+  },
 
-  fill: function () { },
+  flatten: function (array) {
+    var newAry = []
+    for (var i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        var t = array[i]
+        for (var j = 0; j < t.length; j++) {
+          newAry.push(t[j])
+        }
+      } else newAry.push(array[i])
+    }
+    return newAry
+  }
 
 }
