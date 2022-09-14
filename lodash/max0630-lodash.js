@@ -1,7 +1,5 @@
 var max0630 = {
-
   chunk: function (array, size = 1) {
-
     var newAry = []
     var k = 0
     while (k < array.length) {
