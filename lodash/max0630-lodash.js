@@ -254,7 +254,7 @@ var max0630 = {
       map[array[i]] = 1
     }
     for (var k in map) {
-      newAry.push(k)
+      newAry.push(Number(k))
     }
     return newAry
   },
@@ -279,7 +279,7 @@ var max0630 = {
   tail: function (array) {
     var newAry = []
     for (var i = 1; i < array.length; i++) {
-      newAry.push(arrar[i])
+      newAry.push(array[i])
     }
     return newAry
   },
@@ -287,6 +287,9 @@ var max0630 = {
   take: function (array, n = 1) {
     var newAry = []
     for (var i = 0; i < n; i++) {
+      if (array[i] == null) {
+        break
+      }
       newAry.push(array[i])
     }
     return newAry
@@ -294,7 +297,14 @@ var max0630 = {
 
   takeRight: function (array, n = 1) {
     var newAry = []
-    for (var i = array.length - 1; i > array.length - 1 - n; i--) {
+    var start = array.length - n
+    if (start < 0) {
+      start = 0
+    }
+    for (var i = start; i < array.length; i++) {
+      if (array[i] == null) {
+        break
+      }
       newAry.push(array[i])
     }
     return newAry
