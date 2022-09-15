@@ -121,6 +121,94 @@ var max0630 = {
 
 
   intersaction: function (...arrays) {
-    
-  }
+    var newAry = []
+    var map = {}
+    for (var j = 0; j < arrays.length; j++) {
+      var t = arrays[j]
+      for (var i = 0; i < t.length; i++) {
+        if (map[t[i]]) {
+          map[t[i]]++
+        } else {
+          map[t[i]] = 1
+        }
+      }
+    }
+    for (var k in map) {
+      if (map[k] == arrays.length) {
+        newAry.push(k)
+      }
+    }
+    return newAry
+  },
+
+  join: function (array, seperator = ',') {
+    var newStr = ''
+    for (var i = 0; i < array.length; i++) {
+      if (i == array.length - 1) {
+        newStr = newStr + array[i]
+      } else {
+        newStr = newStr + array[i] + seperator
+      }
+    }
+    return newStr
+  },
+
+  last: function (array) {
+    return array[array.length - 1]
+  },
+
+  lastIndexOf: function (array, value, fromIndex = array.length - 1) {
+    for (var i = fromIndex; i >= 0; i--) {
+      if (array[i] == value) {
+        return i
+      }
+    }
+  },
+
+  nth: function (array, n = 0) {
+    if (n < 0) {
+      n = array.length + n
+    }
+    return array[n]
+  },
+
+  pull: function (array, ...values) {
+    var newAry = []
+    for (var i = 0; i < array.length; i++) {
+      if (values.includes(array[i])) {
+
+      } else {
+        newAry.push(array[i])
+      }
+    }
+    return newAry
+  },
+
+  pullAll: function (array, values) {
+    var newAry = []
+    for (var i = 0; i < array.length; i++) {
+      if (values.includes(array[i])) {
+
+      } else {
+        newAry.push(array[i])
+      }
+    }
+    return newAry
+  },
+
+  reverse: function (array) {
+    var newAry = []
+    for (var i = array.length - 1; i >= 0; i--) {
+      newAry.push(array[i])
+    }
+    return newAry
+  },
+
+  sortedIndex: function (array, value) {
+    for (var i = 0; i < array.length; i++) {
+      if (value < array[i]) {
+        return i
+      }
+    }
+  },
 }
