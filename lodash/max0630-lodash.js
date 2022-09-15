@@ -241,7 +241,7 @@ var max0630 = {
 
   sortedLastIndex: function (array, value) {
     for (var i = 0; i < array.length; i++) {
-      if (array[i] < value) {
+      if (array[i] > value) {
         return i
       }
     }
@@ -257,7 +257,64 @@ var max0630 = {
       newAry.push(k)
     }
     return newAry
-  }
+  },
+  /*
+    sortedUniqBy: function (array, [iteratee]) {
+      var map = {}
+      var newAry = []
+      for (var i = 0; i < array.length; i++) {
+        var t = iteratee(array[i])
+        if (t in map) {
+        } else {
+          map[t] = i
+        }
+      }
+      for (var k in map) {
+        newAry.push(array[k.val])
+      }
+      return newAry
+    },
+    */
 
+  tail: function (array) {
+    var newAry = []
+    for (var i = 1; i < array.length; i++) {
+      newAry.push(arrar[i])
+    }
+    return newAry
+  },
+
+  take: function (array, n = 1) {
+    var newAry = []
+    for (var i = 0; i < n; i++) {
+      newAry.push(array[i])
+    }
+    return newAry
+  },
+
+  takeRight: function (array, n = 1) {
+    var newAry = []
+    for (var i = array.length - 1; i > array.length - 1 - n; i--) {
+      newAry.push(array[i])
+    }
+    return newAry
+  },
+
+  union: function (...arrays) {
+    var map = {}
+    var newAry = []
+    for (var i = 0; i < arrays.length; i++) {
+      var t = arrays[i]
+      for (var j = 0; j < t.length; j++) {
+        if (t[j] in map) {
+
+        } else map[t[j]] = 1
+      }
+    }
+    for (var k in map) {
+      newAry.push(k)
+    }
+    return newAry
+  }
 
 }
