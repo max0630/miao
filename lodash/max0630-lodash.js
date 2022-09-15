@@ -228,5 +228,24 @@ var max0630 = {
         return i
       }
     }
-  }
+  },
+
+  sortedLastIndexOf: function (array, value) {
+    for (var i = array.length - 1; i >= 0; i--) {
+      if (value == array[i]) {
+        return i
+      }
+    }
+    return -1
+  },
+
+  sortedLastIndex: function (array, value) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] < value) {
+        return i
+      }
+    }
+  },
+
+
 }
