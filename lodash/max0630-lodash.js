@@ -211,4 +211,21 @@ var max0630 = {
       }
     }
   },
+
+  sortedIndexOf: function (array, value) {
+    for (var i = 0; i < array.length; i++) {
+      if (value == array[i]) {
+        return i
+      }
+    }
+    return -1
+  },
+
+  sortedLastIndex: function (array, value) {
+    for (var i = 0; i < array.length; i++) {
+      if (value < array[i]) {
+        return i
+      }
+    }
+  }
 }
