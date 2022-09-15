@@ -120,7 +120,7 @@ var max0630 = {
   },
 
 
-  intersaction: function (...arrays) {
+  intersection: function (...arrays) {
     var newAry = []
     var map = {}
     for (var j = 0; j < arrays.length; j++) {
@@ -246,6 +246,18 @@ var max0630 = {
       }
     }
   },
+
+  sortedUniq: function (array) {
+    var map = {}
+    var newAry = []
+    for (var i = 0; i < array.length; i++) {
+      map[array[i]] = 1
+    }
+    for (var k in map) {
+      newAry.push(k)
+    }
+    return newAry
+  }
 
 
 }
