@@ -163,6 +163,7 @@ var max0630 = {
         return i
       }
     }
+    return -1
   },
 
   nth: function (array, n = 0) {
@@ -206,7 +207,7 @@ var max0630 = {
 
   sortedIndex: function (array, value) {
     for (var i = 0; i < array.length; i++) {
-      if (value < array[i]) {
+      if (value <= array[i]) {
         return i
       }
     }
