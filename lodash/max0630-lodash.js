@@ -135,7 +135,7 @@ var max0630 = {
     }
     for (var k in map) {
       if (map[k] == arrays.length) {
-        newAry.push(k)
+        newAry.push(Number(k))
       }
     }
     return newAry
@@ -318,13 +318,15 @@ var max0630 = {
       for (var j = 0; j < t.length; j++) {
         if (t[j] in map) {
 
-        } else map[t[j]] = 1
+        } else {
+          map[t[j]] = 1
+          newAry.push(t[j])
+        }
       }
-    }
-    for (var k in map) {
-      newAry.push(k)
+
     }
     return newAry
-  }
+  },
 
+  
 }
