@@ -359,7 +359,24 @@ var max0630 = {
     return newAry
   },
 
-  
+  xor: function (...arrays) {
+    var map = {}
+    var newAry = []
+    for (var i = 0; i < arrays.length; i++) {
+      for (var j = 0; j < arrays[i].length; j++) {
+        if ([arrays[i][j]] in map) {
+          delete map[arrays[i][j]]
+        } else {
+          map[arrays[i][j]] = 1
+        }
+      }
+    }
+    for (var k in map) {
+      newAry.push(Number(k))
+    }
+    return newAry
+  },
+
 
 
 }
