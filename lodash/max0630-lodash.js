@@ -328,5 +328,38 @@ var max0630 = {
     return newAry
   },
 
+  uniq: function (array) {
+    var map = {}
+    var newAry = []
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] in map) {
+
+      } else {
+        map[array[i]] = 1
+        newAry.push(array[i])
+      }
+    }
+    return newAry
+  },
+
+  without: function (array, ...values) {
+    var map = {}
+    for (var j = 0; j < values.length; j++) {
+      if (values[j] in map) {
+
+      } else map[values[j]] = 1
+    }
+
+    var newAry = []
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] in map) {
+
+      } else newAry.push(array[i])
+    }
+    return newAry
+  },
+
   
+
+
 }
