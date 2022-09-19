@@ -408,5 +408,59 @@ var max0630 = {
     return newAry
   },
 
+  /*
+  countBy: function (collection, [iteratee = _.identity]) {
+    var map = {}
+    if (typeof iteratee == 'function') {
+
+    }
+  }
+*/
+  every: function (collection, predicate) {
+    //collection是数组,predicate是函数
+    if (Array.isArray(collection) && typeof predicate == 'function') {
+      for (var i = 0; i < collection.length; i++) {
+        if (!predicate(collection[i], i)) {
+          return false
+        }
+      }
+      return true
+    }
+    //predicate是对象,collection是数组
+    if (typeof predicate == 'object' && !Array.isArray(predicate)) {
+      for (var i = 0; i < collection.length; i++) {
+        for (var k in predicate) {
+          if (collection[i][k] !== predicate[k]) {
+            return false
+          }
+        }
+      }
+      return true
+    }
+    //collection是数组,predicate是数组
+    //这里假设predicate数组长度仅为2
+    if (Array.isArray(predicate)) {
+      for (var i = 0; i < collection.length; i++) {
+        for (var k in collection[i]) {
+          if (k == predicate[0] && collection[i][k] !== predicate[1]) {
+            return false
+          }
+        }
+      }
+      return true
+    }
+    //collection是数组，predicate是字符串
+    if (typeof predicate == 'string') {
+      for (var i = 0; i < collection.length; i++) {
+        for (var k in collection[i]) {
+          if (k == predicate) {
+            return collection[i][k]
+          }
+        }
+      }
+    }
+  },
+
+
 
 }
