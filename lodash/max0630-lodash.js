@@ -363,7 +363,7 @@ var max0630 = {
     var map = {}
     var newAry = []
     for (var i = 0; i < arrays.length; i++) {
-      for (var j = 0; j < arrays.length; j++) {
+      for (var j = 0; j < (arrays[i]).length; j++) {
         if ([arrays[i][j]] in map) {
           map[arrays[i][j]]++
         } else {
@@ -408,5 +408,5 @@ var max0630 = {
     return newAry
   },
 
-  
+
 }
