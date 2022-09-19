@@ -363,20 +363,50 @@ var max0630 = {
     var map = {}
     var newAry = []
     for (var i = 0; i < arrays.length; i++) {
-      for (var j = 0; j < arrays[i].length; j++) {
+      for (var j = 0; j < arrays.length; j++) {
         if ([arrays[i][j]] in map) {
-          delete map[arrays[i][j]]
+          map[arrays[i][j]]++
         } else {
           map[arrays[i][j]] = 1
         }
       }
     }
     for (var k in map) {
-      newAry.push(Number(k))
+      if (map[k] == 1) {
+        newAry.push(Number(k))
+      }
     }
     return newAry
   },
 
 
+  zip: function (...arrays) {
+    var newAry = []
+    for (j = 0; j < arrays.length - 1; j++) {
+      var arr = []
+      var i = 0
+      while (i < arrays.length) {
+        arr.push(arrays[i][j])
+        i++
+      }
+      newAry.push(arr)
+    }
+    return newAry
+  },
 
+  unzip: function (array) {
+    var newAry = []
+    for (var i = 0; i < array[0].length; i++) {
+      var arr = []
+      var j = 0
+      while (j < array.length) {
+        arr.push(array[j][i])
+        j++
+      }
+      newAry.push(arr)
+    }
+    return newAry
+  },
+
+  
 }
