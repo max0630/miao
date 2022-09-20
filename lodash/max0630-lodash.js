@@ -461,13 +461,13 @@ var max0630 = {
     }
   },
 
-  countBy: function (collection, standard) {
+  countBy: function (collection, iteratee) {
     //collection是数组，standard是函数
     if (typeof standard == 'function') {
       var newAry = []
       var map = {}
       for (var i = 0; i < collection.length; i++) {
-        var k = standard(collection[i])
+        var k = iteratee(collection[i])
         if (k in map) {
           map[k]++
         } else map[k] = 1
@@ -488,8 +488,32 @@ var max0630 = {
       }
       return map
     }
-  }
+  },
 
-
+  groupBy: function (collection, iteratee) {
+    if (typeof iteratee == 'function') {
+      var map = {}
+      for (var i = 0; i < collection.length; i++) {
+        var k = iteratee(collection[i])
+        if (k in map) {
+          map[k].push(collection[i])
+        } else map[k] = [collection[i]]
+      }
+      return map
+    }
+    if (typeof iteratee == 'string') {
+      var map = {}
+      for (var i = 0; i < collection.length; i++) {
+        var num = 0
+        for (var j = 0; j < collection[i].length; j++) {
+          num++
+        }
+        if (num in map) {
+          map[num].push(collection[i])
+        } else map[num] = [collection[i]]
+      }
+      return map
+    }
+  },
 
 }
