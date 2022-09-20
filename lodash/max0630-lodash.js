@@ -463,7 +463,7 @@ var max0630 = {
 
   countBy: function (collection, iteratee) {
     //collection是数组，standard是函数
-    if (typeof standard == 'function') {
+    if (typeof iteratee == 'function') {
       var newAry = []
       var map = {}
       for (var i = 0; i < collection.length; i++) {
@@ -475,7 +475,7 @@ var max0630 = {
       return map
     }
     //collection是数组，standard是字符串，这里只考虑了length
-    if (typeof standard == 'string') {
+    if (typeof iteratee == 'string') {
       var map = {}
       for (var i = 0; i < collection.length; i++) {
         var num = 0
