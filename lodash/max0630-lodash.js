@@ -86,6 +86,21 @@ var max0630 = {
     return newAry
   },
 
+  flattenDepth: function flattenDepth(array, depth = 1) {
+    if (depth == 0) {
+      return array
+    }
+    var newAry = []
+    for (var i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i]) && depth >= 1) {
+        newAry = newAry.concat((flattenDepth(array[i], depth - 1)))
+      } else {
+        newAry.push(array[i])
+      }
+    }
+    return newAry
+  },
+
   fromPairs: function (pairs) {
     var map = {}
     for (var i = 0; i < pairs.length; i++) {
@@ -649,6 +664,22 @@ var max0630 = {
       newAry.push(predicate(collection[k]))
     }
     return this.flattenDeep(newAry)
-  }
+  },
+
+  flatMapDeep: function (collection, predicate) {
+    var newAry = []
+    for (var k in collection) {
+      newAry.push(predicate(collection[k]))
+    }
+    return this.flattenDeep(newAry)
+  },
+
+  flatMapDepth: function (collection, predicate, depth = 1) {
+    var newAry = []
+    for (var k in collection) {
+      newAry.push(predicate(collection[k]))
+    }
+    return this.flattenDepth(newAry, depth)
+  },
 
 }
