@@ -379,7 +379,7 @@ var max0630 = {
   takeRightWhile: function (array, predicate) {
     var result = []
 
-    for (var i = array.length - 1; i >= 0; i++) {
+    for (var i = array.length - 1; i >= 0; i--) {
       if (typeof predicate == 'string') {
         //predicate为假停止，否则王result里增加
         if (array[i][predicate]) {
@@ -390,13 +390,13 @@ var max0630 = {
       if (Array.isArray(predicate)) {
         if (array[i][predicate[0]] == predicate[1]) {
           result.unshift(array[i])
-        }
+        } else break
       }
-      /*
-            if (Object.prototype.toString(predicate)) {
-              if (array[i][])
-            }
-          */
+
+      if (Object.prototype.toString(predicate)) {
+
+      }
+
     }
     return result
 
