@@ -245,6 +245,10 @@ var max0630 = {
     }
   },
 
+  sortedIndexBy: function (array, value, iteratee) {
+
+  },
+
   sortedIndexOf: function (array, value) {
     for (var i = 0; i < array.length; i++) {
       if (value == array[i]) {
@@ -290,23 +294,23 @@ var max0630 = {
     }
     return newAry
   },
-  /*
-    sortedUniqBy: function (array, [iteratee]) {
-      var map = {}
-      var newAry = []
-      for (var i = 0; i < array.length; i++) {
-        var t = iteratee(array[i])
-        if (t in map) {
-        } else {
-          map[t] = i
-        }
+
+  sortedUniqBy: function (array, iteratee) {
+    var map = {}
+    var newAry = []
+    for (var i = 0; i < array.length; i++) {
+      var t = iteratee(array[i])
+      if (t in map) {
+      } else {
+        map[t] = i
       }
-      for (var k in map) {
-        newAry.push(array[k.val])
-      }
-      return newAry
-    },
-    */
+    }
+    for (var k in map) {
+      newAry.push(array[map[k]])
+    }
+    return newAry
+  },
+
 
   tail: function (array) {
     var newAry = []
@@ -711,5 +715,6 @@ var max0630 = {
         action(value, key)
       }
     }
+    return ary
   },
 }
