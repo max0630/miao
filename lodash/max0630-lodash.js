@@ -300,14 +300,14 @@ var max0630 = {
     if (typeof iteratee == 'string') {
       for (var i = array.length - 1; i >= 0; i--) {
         if (value[iteratee] == array[i][iteratee]) {
-          return i
+          return i + 1
         }
       }
     }
     if (typeof iteratee == 'function') {
       for (var i = array.length - 1; i >= 0; i--) {
         if (iteratee(value) == iteratee(array[i])) {
-          return i
+          return i + 1
         }
       }
     }
@@ -374,6 +374,32 @@ var max0630 = {
       newAry.push(array[i])
     }
     return newAry
+  },
+
+  takeRightWhile: function (array, predicate) {
+    var result = []
+
+    for (var i = array.length - 1; i >= 0; i++) {
+      if (typeof predicate == 'string') {
+        //predicate为假停止，否则王result里增加
+        if (array[i][predicate]) {
+          result.unshift(array[i])
+        } else break
+      }
+
+      if (Array.isArray(predicate)) {
+        if (array[i][predicate[0]] == predicate[1]) {
+          result.unshift(array[i])
+        }
+      }
+      /*
+            if (Object.prototype.toString(predicate)) {
+              if (array[i][])
+            }
+          */
+    }
+    return result
+
   },
 
   union: function (...arrays) {
