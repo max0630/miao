@@ -516,4 +516,19 @@ var max0630 = {
     }
   },
 
+  size: function (collection) {
+    if (Array.isArray(collection)) {
+      return collection.length
+    } else if (typeof collection == 'object') {
+      var arr = []
+      for (var keys in collection) {
+        arr.push(keys)
+      }
+      return arr.length
+    } else if (typeof collection == 'string') {
+      return collection.length
+    }
+  }
+
+
 }
