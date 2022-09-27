@@ -296,6 +296,23 @@ var max0630 = {
     }
   },
 
+  sortedLastIndexBy: function (array, value, iteratee) {
+    if (typeof iteratee == 'string') {
+      for (var i = array.length - 1; i >= 0; i--) {
+        if (value[iteratee] == array[i][iteratee]) {
+          return i
+        }
+      }
+    }
+    if (typeof iteratee == 'function') {
+      for (var i = array.length - 1; i >= 0; i--) {
+        if (iteratee(value) == iteratee(array[i])) {
+          return i
+        }
+      }
+    }
+  },
+
   sortedUniq: function (array) {
     var map = {}
     var newAry = []
