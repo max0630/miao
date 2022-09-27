@@ -702,11 +702,11 @@ var max0630 = {
     if (Array.isArray(collection)) {
       for (var i = 0; i < ary.length; i++) {
         var current = ary[i]
-        action(current, i, collection) //每一次调用传入当前函数
+        action(current, i, ary) //每一次调用传入当前函数
       }
     } else {
-      for (var key in collection) {
-        var value = collection[key]
+      for (var key in ary) {
+        var value = ary[key]
         action(value, key)
       }
     }
