@@ -76,6 +76,7 @@ var max0630 = {
     return array
   },
 
+  /*
   flatten: function (array) {
     var result = []
     for (var i = 0; i < array.length; i++) {
@@ -88,7 +89,7 @@ var max0630 = {
     }
     return result
   },
-
+*/
 
   flattenDeep: function flattenDeep(array) {
     var newAry = []
