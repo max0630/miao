@@ -601,6 +601,46 @@ var max0630 = {
         }
       }
     }
+  },
+
+  findLast: function (collection, predicate, fromIndex = collection.length - 1) {
+    if (typeof predicate == 'string') {
+      for (var i = collection.length - 1; i >= 0; i--) {
+        if (collection[i][predicate]) {
+          return collection[i]
+        }
+      }
+    }
+    if (Array.isArray(predicate)) {
+      for (var i = collection.length - 1; i >= 0; i--) {
+        if (collection[i][predicate[0]] == predicate[1]) {
+          return collection[i]
+        }
+      }
+    }
+    if (typeof predicate == 'function') {
+      for (var i = collection.length - 1; i >= 0; i--) {
+        if (predicate(collection[i]) == true) {
+          return collection[i]
+        }
+      }
+    }
+    if (Object.prototype.toString(predicate) == '[object Object]') {
+      for (var i = collection.length - 1; i >= 0; i--) {
+        var flag = true
+        for (var k in predicate) {
+          if (k in users[i] && users[i][k] == predicate[k]) {
+            continue
+          } else {
+            flag = false
+            break
+          }
+        }
+        if (flag == true) {
+          return users[i]
+        }
+      }
+    }
   }
 
 }
