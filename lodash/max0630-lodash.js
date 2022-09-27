@@ -76,7 +76,7 @@ var max0630 = {
     return array
   },
 
-  /*
+
   flatten: function (array) {
     var result = []
     for (var i = 0; i < array.length; i++) {
@@ -89,7 +89,7 @@ var max0630 = {
     }
     return result
   },
-*/
+
 
   flattenDeep: function flattenDeep(array) {
     var newAry = []
@@ -700,7 +700,7 @@ var max0630 = {
   },
 
   forEach: function forEach(ary, action) {
-    if (Array.isArray(collection)) {
+    if (Array.isArray(ary)) {
       for (var i = 0; i < ary.length; i++) {
         var current = ary[i]
         action(current, i, ary) //每一次调用传入当前函数
