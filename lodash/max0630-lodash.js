@@ -536,24 +536,18 @@ var max0630 = {
 
       if (typeof predicate == 'string') {
         if (users[i][predicate]) {
-          for (var k in users[i]) {
-            result.push(users[i][k])
+          result.push(users[i])
             return result
-          }
         }
       } else if (Array.isArray(predicate)) {
         if (users[i][predicate[0]] == predicate[1]) {
-          for (var k in users[i]) {
-            result.push(users[i][k])
+          result.push(users[i])
             return result
-          }
         }
       } else if (typeof predicate == 'function') {
         if (predicate(users[i]) == true) {
-          for (var key in users[i]) {
-            result.push(users[i][key])
-            return result
-          }
+          result.push(users[i])
+          return result
         }
       } else if (Object.prototype.toString(predicate) == '[object Object]') {
         var flag = true
@@ -566,15 +560,13 @@ var max0630 = {
           }
         }
         if (flag == true) {
-          for (var k in users[i]) {
-            result.push(users[i][k])
-            return result
-          }
+          result.push(users[i])
+          return result
         }
       }
     }
+  },
 
 
-  }
 
 }
