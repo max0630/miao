@@ -528,7 +528,53 @@ var max0630 = {
     } else if (typeof collection == 'string') {
       return collection.length
     }
-  }
+  },
 
+  filter: function (users, predicate) {
+    var result = []
+    for (var i = 0; i < users.length; i++) {
+
+      if (typeof predicate == 'string') {
+        if (users[i][predicate]) {
+          for (var k in users[i]) {
+            result.push(users[i][k])
+            return result
+          }
+        }
+      } else if (Array.isArray(predicate)) {
+        if (users[i][predicate[0]] == predicate[1]) {
+          for (var k in users[i]) {
+            result.push(users[i][k])
+            return result
+          }
+        }
+      } else if (typeof predicate == 'function') {
+        if (predicate(users[i]) == true) {
+          for (var key in users[i]) {
+            result.push(users[i][key])
+            return result
+          }
+        }
+      } else if (Object.prototype.toString(predicate) == '[object Object]') {
+        var flag = true
+        for (var k in predicate) {
+          if (k in users[i] && users[i][k] == predicate[k]) {
+            continue
+          } else {
+            flag = false
+            break
+          }
+        }
+        if (flag == true) {
+          for (var k in users[i]) {
+            result.push(users[i][k])
+            return result
+          }
+        }
+      }
+    }
+
+
+  }
 
 }
