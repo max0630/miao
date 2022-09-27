@@ -698,5 +698,11 @@ var max0630 = {
     return this.flattenDepth(newAry, depth)
   },
 
+  forEach: function forEach(ary, action) {
+    for (var i = 0; i < ary.length; i++) {
+      var current = ary[i]
+      action(current, i, ary) //每一次调用传入当前函数
+    }
+  }
 
 }
