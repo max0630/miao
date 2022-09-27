@@ -246,7 +246,20 @@ var max0630 = {
   },
 
   sortedIndexBy: function (array, value, iteratee) {
-
+    if (typeof iteratee == 'string') {
+      for (var i = 0; i < array.length; i++) {
+        if (value[iteratee] == array[i][iteratee]) {
+          return i
+        }
+      }
+    }
+    if (typeof iteratee == 'function') {
+      for (var i = 0; i < array.length; i++) {
+        if (iteratee(value) == iteratee(array[i])) {
+          return i
+        }
+      }
+    }
   },
 
   sortedIndexOf: function (array, value) {
