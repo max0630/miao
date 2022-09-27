@@ -564,9 +564,43 @@ var max0630 = {
   },
 
   find: function (collection, predicate) {
-
+    if (typeof predicate == 'string') {
+      for (var i = 0; i < collection.length; i++) {
+        if (collection[i][predicate]) {
+          return collection[i]
+        }
+      }
+    }
+    if (Array.isArray(predicate)) {
+      for (var i = 0; i < collection.length; i++) {
+        if (collection[i][predicate[0]] == predicate[1]) {
+          return collection[i]
+        }
+      }
+    }
+    if (typeof predicate == 'function') {
+      for (var i = 0; i < collection.length; i++) {
+        if (predicate(collection[i]) == true) {
+          return collection[i]
+        }
+      }
+    }
+    if (Object.prototype.toString(predicate) == '[object Object]') {
+      for (var i = 0; i < collection.length; i++) {
+        var flag = true
+        for (var k in predicate) {
+          if (k in users[i] && users[i][k] == predicate[k]) {
+            continue
+          } else {
+            flag = false
+            break
+          }
+        }
+        if (flag == true) {
+          return users[i]
+        }
+      }
+    }
   }
-
-
 
 }
