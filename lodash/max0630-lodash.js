@@ -530,25 +530,25 @@ var max0630 = {
     }
   },
 
-  filter: function (users, predicate) {
+  filter: function (collection, predicate) {
     var result = []
-    for (var i = 0; i < users.length; i++) {
+    for (var i = 0; i < collection.length; i++) {
       if (typeof predicate == 'string') {
-        if (users[i][predicate]) {
-          result.push(users[i])
+        if (collection[i][predicate]) {
+          result.push(collection[i])
         }
       } else if (Array.isArray(predicate)) {
-        if (users[i][predicate[0]] == predicate[1]) {
-          result.push(users[i])
+        if (collection[i][predicate[0]] == predicate[1]) {
+          result.push(collection[i])
         }
       } else if (typeof predicate == 'function') {
-        if (predicate(users[i]) == true) {
-          result.push(users[i])
+        if (predicate(collection[i]) == true) {
+          result.push(collection[i])
         }
       } else if (Object.prototype.toString(predicate) == '[object Object]') {
         var flag = true
         for (var k in predicate) {
-          if (k in users[i] && users[i][k] == predicate[k]) {
+          if (k in collection[i] && collection[i][k] == predicate[k]) {
             continue
           } else {
             flag = false
@@ -556,7 +556,7 @@ var max0630 = {
           }
         }
         if (flag == true) {
-          result.push(users[i])
+          result.push(collection[i])
         }
       }
     }
@@ -589,7 +589,7 @@ var max0630 = {
       for (var i = 0; i < collection.length; i++) {
         var flag = true
         for (var k in predicate) {
-          if (k in users[i] && users[i][k] == predicate[k]) {
+          if (k in collection[i] && collection[i][k] == predicate[k]) {
             continue
           } else {
             flag = false
@@ -597,7 +597,7 @@ var max0630 = {
           }
         }
         if (flag == true) {
-          return users[i]
+          return collection[i]
         }
       }
     }
@@ -629,7 +629,7 @@ var max0630 = {
       for (var i = collection.length - 1; i >= 0; i--) {
         var flag = true
         for (var k in predicate) {
-          if (k in users[i] && users[i][k] == predicate[k]) {
+          if (k in collection[i] && collection[i][k] == predicate[k]) {
             continue
           } else {
             flag = false
@@ -637,10 +637,11 @@ var max0630 = {
           }
         }
         if (flag == true) {
-          return users[i]
+          return collection[i]
         }
       }
     }
-  }
+  },
+
 
 }
