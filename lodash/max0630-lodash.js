@@ -643,5 +643,12 @@ var max0630 = {
     }
   },
 
+  flatMap: function (collection, predicate) {
+    var newAry = []
+    for (var k in collection) {
+      newAry.push(predicate(collection[k]))
+    }
+    return this.flattenDeep(newAry)
+  }
 
 }
