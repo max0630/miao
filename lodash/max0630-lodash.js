@@ -679,7 +679,7 @@ var max0630 = {
     for (var k in collection) {
       newAry.push(predicate(collection[k]))
     }
-    return this.flatten(newAry)
+    return this.flattenDeep(newAry)
   },
 
   flatMapDeep: function (collection, predicate) {
