@@ -77,16 +77,16 @@ var max0630 = {
   },
 
   flatten: function (array) {
-    var newAry = []
+    var result = []
     for (var i = 0; i < array.length; i++) {
       if (Array.isArray(array[i])) {
         var t = array[i]
         for (var j = 0; j < t.length; j++) {
-          newAry.push(t[j])
+          result.push(t[j])
         }
-      } else newAry.push(array[i])
+      } else result.push(array[i])
     }
-    return newAry
+    return result
   },
 
 
@@ -679,7 +679,7 @@ var max0630 = {
     for (var k in collection) {
       newAry.push(predicate(collection[k]))
     }
-    return this.flattenDeep(newAry)
+    return this.flatten(newAry)
   },
 
   flatMapDeep: function (collection, predicate) {
@@ -697,5 +697,6 @@ var max0630 = {
     }
     return this.flattenDepth(newAry, depth)
   },
+
 
 }
