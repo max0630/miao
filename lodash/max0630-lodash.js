@@ -28,6 +28,22 @@ var max0630 = {
     return newAry
   },
 
+  difference: function (array, ...values) {
+    var newAry = []
+    var flattenValues = []
+    for (var k = 0; k < values.length; k++) {
+      flattenValues = flattenValues.concat(this.flattenDeep(values[k]))
+    }
+
+    for (var i = 0; i < array.length; i++) {
+      if (flattenValues.indexOf(array[i]) >= 0) {
+
+      } else {
+        newAry.push(array[i])
+      }
+    }
+    return newAry
+  },
 
   drop: function (array, n = 1) {
     var count = 0
