@@ -481,18 +481,35 @@ var max0630 = {
     var map = {}
     var newAry = []
     for (var i = 0; i < arrays.length - 1; i++) {
-      var t = arrays[i]
-      for (var j = 0; j < t.length; j++) {
-        if (iteratee(t[j]) in map) {
 
-        } else {
-          map[iteratee(t[j])] = 1
-          newAry.push(t[j])
+      if (typeof iteratee == 'function') {
+        var t = arrays[i]
+        for (var j = 0; j < t.length; j++) {
+          if (iteratee(t[j]) in map) {
+
+          } else {
+            map[iteratee(t[j])] = 1
+            newAry.push(t[j])
+          }
         }
       }
+      if (typeof iteratee == 'string') {
+        var t = arrays[i]
+        for (var j = 0; j < t.length; j++) {
+          if (t[j][iteratee] in map) {
+
+          } else {
+            map[t[j][iteratee]] = 1
+            newAry.push(t[j])
+          }
+        }
+      }
+
     }
     return newAry
   },
+
+
 
   uniq: function (array) {
     var map = {}
