@@ -418,6 +418,47 @@ var max0630 = {
 
   },
 
+  takeWhile: function (array, predicate) {
+    var result = []
+
+    for (var i = 0; i < array.length; i++) {
+      if (typeof predicate == 'string') {
+        //predicate为假停止，否则王result里增加
+        if (array[i][predicate]) {
+          result.pushpush(array[i])
+        } else break
+      } else
+
+        if (Array.isArray(predicate)) {
+          if (array[i][predicate[0]] == predicate[1]) {
+            result.push(array[i])
+          } else break
+        } else
+
+          if (typeof predicate == 'function') {
+            if (predicate(array[i]) == true) {
+              result.push(array[i])
+            }
+          } else
+
+            if (Object.prototype.toString(predicate) == '[object Object]') {
+              var flag = true
+              for (var k in predicate) {
+                if (k in array[i] && array[i][k] == predicate[k]) {
+                  continue
+                } else {
+                  flag = false
+                  break
+                }
+              }
+              if (flag == true) {
+                result.push(array[i])
+              }
+            }
+    }
+    return result
+  },
+
   union: function (...arrays) {
     var map = {}
     var newAry = []
