@@ -472,7 +472,24 @@ var max0630 = {
           newAry.push(t[j])
         }
       }
+    }
+    return newAry
+  },
 
+  unionBy: function (...arrays) {
+    var iteratee = arrays[arrays.length - 1] //oops
+    var map = {}
+    var newAry = []
+    for (var i = 0; i < arrays.length - 1; i++) {
+      var t = arrays[i]
+      for (var j = 0; j < t.length; j++) {
+        if (iteratee(t[j]) in map) {
+
+        } else {
+          map[iteratee(t[j])] = 1
+          newAry.push(t[j])
+        }
+      }
     }
     return newAry
   },
