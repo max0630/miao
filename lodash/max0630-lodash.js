@@ -887,26 +887,21 @@ var max0630 = {
         }
       }
       return false
-    } else
-      if (typeof collection == 'object') {
+    } else if (typeof collection == 'object') {
         for (var k in collection) {
           if (collection[k] == value) {
             return true
           }
         }
         return false
-      }
-    /*
-    else if (typeof collection == 'string') {
-      var curStr = ''
+    } else if (typeof collection == 'string') {
       for (var i = fromIndex; i < collection.length; i++) {
         var j = 0
-        if (collection[i] == value[j] && j <= value.length) {
-          j++
+        if (collection.indexOf(value) == -1) {
+          return false
         }
       }
-
+      return true
     }
-    */
   },
 }
