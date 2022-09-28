@@ -904,4 +904,17 @@ var max0630 = {
       return true
     }
   },
+
+  keyBy: function (collection, iteratee) {
+    var map = {}
+    for (var i = 0; i < collection.length; i++) {
+      if (typeof iteratee == 'function') {
+        map[iteratee(collection[i])] = collection[i]
+      }
+      if (typeof iteratee == 'string') {
+        map[collection[i][iteratee]] = collection[i]
+      }
+    }
+    return map
+  }
 }
