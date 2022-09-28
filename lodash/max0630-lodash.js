@@ -504,7 +504,6 @@ var max0630 = {
           }
         }
       }
-
     }
     return newAry
   },
@@ -863,5 +862,36 @@ var max0630 = {
       }
     }
     return ary
+  },
+
+  includes: function (collection, value, fromIndex = 0) {
+    if (Array.isArray(collection)) {
+      for (var i = fromIndex; i < collection.length; i++) {
+        if (collection[i] == value) {
+          return true
+        }
+      }
+      return false
+    } else
+      if (typeof collection == 'object') {
+        for (var k in collection) {
+          if (collection[k] == value) {
+            return true
+          }
+        }
+        return false
+      }
+    /*
+    else if (typeof collection == 'string') {
+      var curStr = ''
+      for (var i = fromIndex; i < collection.length; i++) {
+        var j = 0
+        if (collection[i] == value[j] && j <= value.length) {
+          j++
+        }
+      }
+
+    }
+    */
   },
 }
