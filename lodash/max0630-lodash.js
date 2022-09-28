@@ -864,6 +864,21 @@ var max0630 = {
     return ary
   },
 
+  forEachRight: function (ary, action) {
+    if (Array.isArray(ary)) {
+      for (var i = ary.length - 1; i >= 0; i--) {
+        var current = ary[i]
+        action(current, i, ary) //每一次调用传入当前函数
+      }
+    } else {
+      for (var key in ary) {
+        var value = ary[key]
+        action(value, key)
+      }
+    }
+    return ary
+  },
+
   includes: function (collection, value, fromIndex = 0) {
     if (Array.isArray(collection)) {
       for (var i = fromIndex; i < collection.length; i++) {
