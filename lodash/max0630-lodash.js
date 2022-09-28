@@ -916,5 +916,24 @@ var max0630 = {
       }
     }
     return map
+  },
+
+  map: function (collection, iteratee) {
+    var res = []
+    for (var i = 0; i < collection.length; i++) {
+      if (typeof iteratee == 'function') {
+        if (Array.isArray(collection)) {
+          res.push(iteratee(collection[i]))
+        } else if (typeof collection == 'object') {
+          for (var key in collection) {
+            res.push(iteratee(key))
+          }
+        }
+      }
+      if (typeof iteratee == 'string') {
+        res.push(collection[i][iteratee])
+      }
+    }
+    return res
   }
 }
