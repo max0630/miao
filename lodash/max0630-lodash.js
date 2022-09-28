@@ -385,18 +385,34 @@ var max0630 = {
         if (array[i][predicate]) {
           result.unshift(array[i])
         } else break
-      }
+      } else
 
       if (Array.isArray(predicate)) {
         if (array[i][predicate[0]] == predicate[1]) {
           result.unshift(array[i])
         } else break
-      }
+      } else
 
-      if (Object.prototype.toString(predicate)) {
+        if (typeof predicate == 'function') {
+          if (predicate(array[i]) == true) {
+            result.unshift(array[i])
+          }
+        } else
 
-      }
-
+          if (Object.prototype.toString(predicate) == '[object Object]') {
+            var flag = true
+            for (var k in predicate) {
+              if (k in array[i] && array[i][k] == predicate[k]) {
+                continue
+              } else {
+                flag = false
+                break
+              }
+          }
+          if (flag == true) {
+            result.unshift(array[i])
+          }
+        }
     }
     return result
 
