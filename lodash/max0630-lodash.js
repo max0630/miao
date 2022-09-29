@@ -985,10 +985,10 @@ var max0630 = {
       for (var i = 0; i < array.length; i++) {
         for (var k in predicate) {
           if (predicate[k] != array[i][k]) {
-            trueArr.push(array[i])
+            falseArr.push(array[i])
             break
           } else {
-            falseArr.push(array[i])
+            trueArr.push(array[i])
             break
           }
         }
