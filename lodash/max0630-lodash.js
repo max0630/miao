@@ -1024,10 +1024,6 @@ var max0630 = {
   reduceRight: function (collection, reducer, initialValue) {
     var result = initialValue
     if (Array.isArray(collection)) {
-      if (initialValue == undefined) {
-        result = collection[0]
-        start = 1
-      }
       for (var i = collection.length; i >= 0; i--) {
         result = reducer(result, collection[i], i, collection)
       }
@@ -1070,5 +1066,7 @@ var max0630 = {
     }
     return result
   },
+
+
 
 }
