@@ -1067,6 +1067,8 @@ var max0630 = {
     return result
   },
 
-
+  sample: function (collection) {
+    return collection[Math.floor(Math.random() * collection.length)]
+  }
 
 }
