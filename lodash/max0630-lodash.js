@@ -387,32 +387,32 @@ var max0630 = {
         } else break
       } else
 
-      if (Array.isArray(predicate)) {
-        if (array[i][predicate[0]] == predicate[1]) {
-          result.unshift(array[i])
-        } else break
-      } else
-
-        if (typeof predicate == 'function') {
-          if (predicate(array[i]) == true) {
+        if (Array.isArray(predicate)) {
+          if (array[i][predicate[0]] == predicate[1]) {
             result.unshift(array[i])
-          }
+          } else break
         } else
 
-          if (Object.prototype.toString(predicate) == '[object Object]') {
-            var flag = true
-            for (var k in predicate) {
-              if (k in array[i] && array[i][k] == predicate[k]) {
-                continue
-              } else {
-                flag = false
-                break
+          if (typeof predicate == 'function') {
+            if (predicate(array[i]) == true) {
+              result.unshift(array[i])
+            }
+          } else
+
+            if (Object.prototype.toString(predicate) == '[object Object]') {
+              var flag = true
+              for (var k in predicate) {
+                if (k in array[i] && array[i][k] == predicate[k]) {
+                  continue
+                } else {
+                  flag = false
+                  break
+                }
               }
-          }
-          if (flag == true) {
-            result.unshift(array[i])
-          }
-        }
+              if (flag == true) {
+                result.unshift(array[i])
+              }
+            }
     }
     return result
 
@@ -888,12 +888,12 @@ var max0630 = {
       }
       return false
     } else if (typeof collection == 'object') {
-        for (var k in collection) {
-          if (collection[k] == value) {
-            return true
-          }
+      for (var k in collection) {
+        if (collection[k] == value) {
+          return true
         }
-        return false
+      }
+      return false
     } else if (typeof collection == 'string') {
       for (var i = fromIndex; i < collection.length; i++) {
         var j = 0
@@ -927,10 +927,10 @@ var max0630 = {
             res.push(iteratee(collection[i]))
           }
         }
-          if (typeof iteratee == 'string') {
-            res.push(collection[i][iteratee])
-          }
+        if (typeof iteratee == 'string') {
+          res.push(collection[i][iteratee])
         }
+      }
 
     } else if (Object.prototype.toString(collection) == '[object Object]') {
       for (var key in collection) {
@@ -940,5 +940,43 @@ var max0630 = {
     return res
   },
 
-
+  partition: function (array, predicate) {
+    var trueArr = []
+    var falseArr = []
+    var res = []
+    for (var i = 0; i < array.length; i++) {
+      if (typeof predicate == 'string') {
+        if (array[i][predicate] == true) {
+          trueArr.push(array[i])
+        } else {
+          falseArr.push(array[i])
+        }
+      } else
+        if (typeof predicate == 'function') {
+          if (predicate(array[i]) == true) {
+            trueArr.push(array[i])
+          } else {
+            falseArr.push(array[i])
+          }
+        } else
+          if (Array.isArray(predicate)) {
+            if (array[i][predicate[0]] == predicate[1]) {
+              trueArr.push(array[i])
+            } else {
+              falseArr.push(array[i])
+            }
+          } else
+            if (Object.prototype.toString(predicate) == '[object Object]') {
+              for (var k in predicate) {
+                if (array[i][k] == predicate[k]) {
+                  trueArr.push(array[i])
+                } else {
+                  falseArr.push(array[i])
+                }//bugggggggggggggg
+              }
+            }
+    }
+    res.push(trueArr, falseArr)
+    return res
+  },
 }
