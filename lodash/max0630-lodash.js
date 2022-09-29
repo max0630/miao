@@ -1069,6 +1069,18 @@ var max0630 = {
 
   sample: function (collection) {
     return collection[Math.floor(Math.random() * collection.length)]
+  },
+
+  shuffle: function (collection) {
+    var array = collection
+    var i = array.length
+    while (i--) {
+      var j = Math.floor((Math.random() * i))
+      var t = array[i]
+      array[i] = array[j]
+      array[j] = t
+    }
+    return array
   }
 
 }
