@@ -926,16 +926,19 @@ var max0630 = {
           if (Array.isArray(collection)) {
             res.push(iteratee(collection[i]))
           }
+        }
           if (typeof iteratee == 'string') {
             res.push(collection[i][iteratee])
           }
         }
-      }
+
     } else if (Object.prototype.toString(collection) == '[object Object]') {
       for (var key in collection) {
         res.push(iteratee(collection[key]))
       }
     }
     return res
-  }
+  },
+
+
 }
