@@ -920,18 +920,20 @@ var max0630 = {
 
   map: function (collection, iteratee) {
     var res = []
-    for (var i = 0; i < collection.length; i++) {
-      if (typeof iteratee == 'function') {
-        if (Array.isArray(collection)) {
-          res.push(iteratee(collection[i]))
-        } else if (typeof collection == 'object') {
-          for (var key in collection) {
-            res.push(iteratee(key))
+    if (Array.isArray(collection)) {
+      for (var i = 0; i < collection.length; i++) {
+        if (typeof iteratee == 'function') {
+          if (Array.isArray(collection)) {
+            res.push(iteratee(collection[i]))
+          }
+          if (typeof iteratee == 'string') {
+            res.push(collection[i][iteratee])
           }
         }
       }
-      if (typeof iteratee == 'string') {
-        res.push(collection[i][iteratee])
+    } else if (Object.prototype.toString(collection) == '[object Object]') {
+      for (var key in collection) {
+        res.push(iteratee(collection[key]))
       }
     }
     return res
