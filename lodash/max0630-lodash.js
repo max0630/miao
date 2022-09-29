@@ -944,39 +944,59 @@ var max0630 = {
     var trueArr = []
     var falseArr = []
     var res = []
-    for (var i = 0; i < array.length; i++) {
-      if (typeof predicate == 'string') {
+
+    if (typeof predicate == 'string') {
+      for (var i = 0; i < array.length; i++) {
         if (array[i][predicate] == true) {
           trueArr.push(array[i])
         } else {
           falseArr.push(array[i])
         }
-      } else
-        if (typeof predicate == 'function') {
-          if (predicate(array[i]) == true) {
+      }
+      res.push(trueArr, falseArr)
+      return res
+    }
+
+    if (typeof predicate == 'function') {
+      for (var i = 0; i < array.length; i++) {
+        if (predicate(array[i]) == true) {
+          trueArr.push(array[i])
+        } else {
+          falseArr.push(array[i])
+        }
+      }
+      res.push(trueArr, falseArr)
+      return res
+    }
+
+    if (Array.isArray(predicate)) {
+      for (var i = 0; i < array.length; i++) {
+        if (array[i][predicate[0]] == predicate[1]) {
+          trueArr.push(array[i])
+        } else {
+          falseArr.push(array[i])
+        }
+      }
+      res.push(trueArr, falseArr)
+      return res
+    }
+
+    if (Object.prototype.toString(predicate) == '[object Object]') {
+      for (var i = 0; i < array.length; i++) {
+        for (var k in predicate) {
+          if (predicate[k] != array[i][k]) {
             trueArr.push(array[i])
+            break
           } else {
             falseArr.push(array[i])
+            break
           }
-        } else
-          if (Array.isArray(predicate)) {
-            if (array[i][predicate[0]] == predicate[1]) {
-              trueArr.push(array[i])
-            } else {
-              falseArr.push(array[i])
-            }
-          } else
-            if (Object.prototype.toString(predicate) == '[object Object]') {
-              for (var k in predicate) {
-                if (array[i][k] == predicate[k]) {
-                  trueArr.push(array[i])
-                } else {
-                  falseArr.push(array[i])
-                }//bugggggggggggggg
-              }
-            }
+        }
+      }
+      res.push(trueArr, falseArr)
+      return res
     }
-    res.push(trueArr, falseArr)
-    return res
   },
+
+
 }
