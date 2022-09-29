@@ -1079,6 +1079,41 @@ var max0630 = {
       array[j] = t
     }
     return array
-  }
+  },
+
+  some: function (collection, predicate) {
+    for (var i = 0; i < collection.length; i++) {
+      if (typeof predicate == 'string') {
+        if (collection[i][predicate]) {
+          return true
+        }
+      } else
+        if (Array.isArray(predicate)) {
+          if (collection[i][predicate[0]] == predicate[1]) {
+            return true
+          }
+        } else
+          if (typeof predicate == 'function') {
+            if (predicate(collection[i]) == true) {
+              return true
+            }
+          } else
+            if (Object.prototype.toString(predicate) == '[object Object]') {
+              var flag = true
+              for (var k in predicate) {
+                if (k in collection[i] && collection[i][k] == predicate[k]) {
+                  continue
+                } else {
+                  flag = false
+                  break
+                }
+              }
+              if (flag == true) {
+                return true
+              }
+            }
+    }
+    return false
+  },
 
 }
