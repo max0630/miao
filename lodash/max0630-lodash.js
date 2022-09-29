@@ -1035,5 +1035,40 @@ var max0630 = {
     }
   },
 
+  reject: function (collection, predicate) {
+    var result = []
+    for (var i = 0; i < collection.length; i++) {
+      if (typeof predicate == 'string') {
+        if (!(collection[i][predicate])) {
+          result.push(collection[i])
+        }
+      } else
+        if (Array.isArray(predicate)) {
+          if (collection[i][predicate[0]] != predicate[1]) {
+            result.push(collection[i])
+          }
+        } else
+          if (typeof predicate == 'function') {
+            if (predicate(collection[i]) == false) {
+              result.push(collection[i])
+            }
+          } else
+            if (Object.prototype.toString(predicate) == '[object Object]') {
+              var flag = true
+              for (var k in predicate) {
+                if (k in collection[i] && collection[i][k] == predicate[k]) {
+                  continue
+                } else {
+                  flag = false
+                  break
+                }
+              }
+              if (flag == false) {
+                result.push(collection[i])
+              }
+            }
+    }
+    return result
+  },
 
 }
