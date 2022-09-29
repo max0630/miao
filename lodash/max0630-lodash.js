@@ -1023,12 +1023,10 @@ var max0630 = {
 
   reduceRight: function (collection, reducer, initialValue) {
     var result = initialValue
-    if (Array.isArray(collection)) {
-      for (var i = collection.length; i >= 0; i--) {
-        result = reducer(result, collection[i], i, collection)
-      }
-      return result
+    for (var i = collection.length - 1; i >= 0; i--) {
+      result = reducer(result, collection[i], i, collection)
     }
+    return result
   },
 
   reject: function (collection, predicate) {
