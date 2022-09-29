@@ -998,5 +998,29 @@ var max0630 = {
     }
   },
 
+  reduce: function (collection, reducer, initialValue) {
+    var result = initialValue
+    var start = 0
+
+    if (Array.isArray(collection)) {
+      if (initialValue == undefined) {
+        result = collection[0]
+        start = 1
+      }
+      for (var i = start; i < collection.length; i++) {
+        result = reducer(result, collection[i], i, collection)
+      }
+      return result
+    }
+
+    if (Object.prototype.toString(collection) == '[object Object]') {
+      for (var k in collection) {
+        result = reducer(result, collection[k], k, collection)
+      }
+      return result
+    }
+
+  }
+
 
 }
