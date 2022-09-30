@@ -1180,10 +1180,10 @@ var max0630 = {
 
   castArray: function (value) {
     var result = []
-    if (value == null || value == undefined) {
+    if (value == null) {
       result.push(value)
       return result
-    } else if (value.length == 0) {
+    } else if (value == undefined || value.length == 0) {
       return []
     } else {
       result.push(value)
