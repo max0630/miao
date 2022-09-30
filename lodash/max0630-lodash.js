@@ -107,6 +107,37 @@ var max0630 = {
     }
   },
 
+  findLastIndex: function (array, predicate, fromIndex = 0) {
+    for (var i = array.length - 1; i >= 0; i--) {
+      if (typeof predicate == 'string') {
+        if (array[i][predicate]) {
+          return i
+        }
+      } else if (Array.isArray(predicate)) {
+        if (array[i][predicate[0]] == predicate[1]) {
+          return i
+        }
+      } else if (typeof predicate == 'function') {
+        if (predicate(array[i]) == true) {
+          return i
+        }
+      } else if (Object.prototype.toString(predicate) == '[object Object]') {
+        var flag = true
+        for (var k in predicate) {
+          if (k in array[i] && array[i][k] == predicate[k]) {
+            continue
+          } else {
+            flag = false
+            break
+          }
+        }
+        if (flag == true) {
+          return i
+        }
+      }
+    }
+  },
+
 
   flatten: function (array) {
     var result = []
