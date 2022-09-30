@@ -1116,4 +1116,14 @@ var max0630 = {
     return false
   },
 
+  castArray: function (value) {
+    var result = []
+    if (value.length == 0) {
+      return []
+    } else {
+      result.push(value)
+      return result
+    }
+  },
+
 }
