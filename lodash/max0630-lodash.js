@@ -1267,4 +1267,20 @@ var max0630 = {
     } else
       return Object.getPrototypeOf(value) == HTMLBodyElement.prototype
   },
+
+  isError: function (value) {
+    if (value == null || value == 'undefined') {
+      return false
+    } else
+      return Object.getPrototypeOf(value) == Error.prototype
+  },
+
+  isFinite: function (value) {
+    if (typeof value !== 'number') {
+      return false
+    } else if (value == 'Infinity' || value == '-Infinity') {
+      return false
+    } else return true
+
+  }
 }
