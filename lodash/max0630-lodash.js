@@ -536,7 +536,21 @@ var max0630 = {
       }
     }
     return newAry
+    /*
+      union: function (...arrays) {
+        var result = []
+        for (var array of arrays) {
+          for (var item of array) {
+            if (!result.includes(item)) {
+              result.push(item)
+            }
+          }
+        }
+        return result
+      },
+    */
   },
+
 
   unionBy: function (...arrays) {
     var iteratee = arrays[arrays.length - 1] //oops
@@ -570,8 +584,6 @@ var max0630 = {
     return newAry
   },
 
-
-
   uniq: function (array) {
     var map = {}
     var newAry = []
@@ -584,6 +596,40 @@ var max0630 = {
       }
     }
     return newAry
+  },
+
+  uniqBy: function (array, iteratee) {
+    if (typeof (iteratee) === 'string') {
+      var func = (obj) => obj[iteratee]
+    } else if (typeof iteratee == 'function') {
+      var func = iteratee
+    }
+    var set = new Set()
+    var result = []
+    for (var item of array) {
+      var t = func(item)
+      if (!set.has(t)) {
+        result.push(item)
+        set.add(t)
+      }
+    }
+    return result
+  },
+
+  uniqWith: function (array, predicate) {
+    var result = []
+    for (var item of array) {
+      var seen = false
+      for (var p of result) {
+        if (predicate(p, item)) {
+          seen = true
+        }
+      }
+      if (!seen) {
+        result.push(item)
+      }
+    }
+    return result
   },
 
   without: function (array, ...values) {
