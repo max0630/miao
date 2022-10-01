@@ -1329,7 +1329,13 @@ var max0630 = {
     return true
   },
 
-  
+  isNaN: function (value) {
+    if (value !== value) {
+      return true
+    } else return false
+  }
+
+
 
 
 
