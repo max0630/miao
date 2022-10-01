@@ -1330,7 +1330,9 @@ var max0630 = {
   },
 
   isNaN: function (value) {
-    if (value !== value) {
+    if (typeof value == 'object' && value.prototype == NaN.prototype) {
+      return true
+    } else if (value !== value) {
       return true
     } else return false
   },
