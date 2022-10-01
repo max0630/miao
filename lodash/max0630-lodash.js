@@ -1355,8 +1355,7 @@ var max0630 = {
       return false
     } else if (typeof value == 'object') {
       return true
-    }
-
+    } else return false
   },
 
 
