@@ -1319,8 +1319,8 @@ var max0630 = {
   isMatch: function (obj, target) {
     for (var key in target) {
       if (key in obj) {
-        if (obj[key] !== target[key]) {
-          return false
+        if (obj[key] == target[key]) {
+          return true
         }
       } else {
         return false
