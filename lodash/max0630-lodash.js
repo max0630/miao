@@ -1245,6 +1245,13 @@ var max0630 = {
     } else if (value.length >= 0 && value.length <= Number.MAX_SAFE_INTEGER) {
       return true
     }
+  },
+
+  isBoolean: function (value) {
+    if (value == null || value == 'undefined') {
+      return false
+    } else
+      return Object.getPrototypeOf(value) == Boolean.prototype
   }
 
 }
