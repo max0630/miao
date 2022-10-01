@@ -1281,6 +1281,20 @@ var max0630 = {
     } else if (value == 'Infinity' || value == '-Infinity') {
       return false
     } else return true
+  },
 
-  }
+  isFunction: function (value) {
+    if (value == null || value == 'undefined') {
+      return false
+    } else
+      return Object.getPrototypeOf(value) == Function.prototype
+  },
+
+  isInteger: function (value) {
+    if (value == null || value == 'undefined') {
+      return false
+    } else
+      return Number.isInteger(value)
+  },
+
 }
