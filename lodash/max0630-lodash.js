@@ -1226,10 +1226,25 @@ var max0630 = {
 
   castArray: function (value) {
     var result = []
-    if (value == '') {
+    if (arguments.length == 0) {
       return []
     } else
       return [value]
   },
+
+
+  isArray: function (value) {
+    return Object.getPrototypeOf(value) == Array.prototype
+  },
+
+  isArrayLike: function (value) {
+    if (typeof value == 'function') {
+      return false
+    } else if (arguments.length == 0) {
+      return false
+    } else if (value.length >= 0 && value.length <= Number.MAX_SAFE_INTEGER) {
+      return true
+    }
+  }
 
 }
