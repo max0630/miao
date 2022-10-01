@@ -1297,4 +1297,17 @@ var max0630 = {
       return Number.isInteger(value)
   },
 
+  isLength: function (value) {
+    if (typeof value != 'number') {
+      return false
+    }
+    if (max0630.isInteger(value) == false) {
+      return false
+    }
+    if (value <= 2 ** 53 - 1 && value >= 0) {
+      return true
+    }
+
+  },
+
 }
