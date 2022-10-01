@@ -1355,7 +1355,7 @@ var max0630 = {
   isObject: function (value) {
     if (value == null || value == 'undefined') {
       return false
-    } else if (typeof value == 'object') {
+    } else if (value.prototype == Object.prototype) {
       return true
     } else return false
   },
