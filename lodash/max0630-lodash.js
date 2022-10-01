@@ -1333,6 +1333,14 @@ var max0630 = {
     if (value !== value) {
       return true
     } else return false
+  },
+
+  isNull: function (value) {
+    return value === null
+  },
+
+  isNil: function (value) {
+    return value == null
   }
 
 
