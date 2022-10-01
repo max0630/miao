@@ -1226,17 +1226,10 @@ var max0630 = {
 
   castArray: function (value) {
     var result = []
-    if (!value) {
-      return null
-    } else if (value == null) {
-      result.push(value)
-      return result
-    } else if (value == undefined || value.length == 0) {
+    if (value == '') {
       return []
-    } else {
-      result.push(value)
-      return result
-    }
+    } else
+      return [value]
   },
 
 }
