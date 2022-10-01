@@ -1307,7 +1307,31 @@ var max0630 = {
     if (value <= 2 ** 53 - 1 && value >= 0) {
       return true
     }
-
   },
+
+  isMap: function (value) {
+    if (value == null || value == 'undefined') {
+      return false
+    } else
+      return Object.getPrototypeOf(value) == Map.prototype
+  },
+
+  isMatch: function (obj, target) {
+    for (var key in target) {
+      if (key in obj) {
+        if (obj[key] !== target[key]) {
+          return false
+        }
+      } else {
+        return false
+      }
+    }
+    return true
+  },
+
+  
+
+
+
 
 }
