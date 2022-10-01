@@ -1341,7 +1341,25 @@ var max0630 = {
 
   isNil: function (value) {
     return value == null
-  }
+  },
+
+  isNumber: function (value) {
+    if (value == null || value == 'undefined') {
+      return false
+    } else
+      return Object.getPrototypeOf(value) == Number.prototype
+  },
+
+  isObject: function (value) {
+    if (value == null || value == 'undefined') {
+      return false
+    } else if (typeof value == 'object') {
+      return true
+    }
+
+  },
+
+
 
 
 
