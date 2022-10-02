@@ -1353,7 +1353,7 @@ var max0630 = {
   isObject: function (value) {
     if (value == null || value == 'undefined') {
       return false
-    } else if (value.prototype == Object.prototype) {
+    } else if (typeof value == 'object') {
       return true
     } else return false
   },
