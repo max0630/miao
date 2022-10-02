@@ -1322,15 +1322,13 @@ var max0630 = {
         if (obj[key] == target[key]) {
           return true
         }
-      } else {
-        return false
       }
     }
-    return true
+    return false
   },
 
   isNaN: function (value) {
-    if (typeof value == 'object' && value.prototype == NaN.prototype) {
+    if (typeof value == 'object' && value.prototype == Number.prototype) {
       return true
     } else if (value !== value) {
       return true
