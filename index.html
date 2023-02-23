@@ -1,19 +1,117 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>my-website</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todo-vanilla-js</title>
   <style>
-    h2 {
-      color: yellowgreen;
+    #todoList li.completed {
+      text-decoration: line-through;
     }
-  
+    body {
+      /* 由于css计数器只能在那ul里面使用，所以在body里reset一下 */
+      counter-reset: todo-left-count;
+    }
+    /* 遇到一个没有打勾的li，即不是completed */
+    li:not(.completed) {
+      counter-increment: todo-left-count;
+    }
+    #todoLeftCount::before {
+      content: counter(todo-left-count);
+    }
   </style>
 </head>
 <body>
-<header>
-  <h2>Welcome to my homepage!</h2>
+  <div>
+    <h1>todo</h1>
+    <input type="checkbox">
+    <input type="text" id="todoInput" placeholder="What needs to be done?">
+  </div>
+  <ul id="todoList"></ul>
+  <!-- 底下的几个按键 -->
+  <div>
+    <span id="todoLeftCount"> item(s) left</span>
+    <span>
+      <label><input type="radio" name="selected" value="ALL">All</label>
+      <label><input type="radio" name="selected" value="ACTIVE">Active</label>
+      <label><input type="radio" name="selected" value="COMPLETED">Completed</label>
+    </span>
+    <button>clear completed</button>
+  </div>
+
+
+
+
+  <script>
+    var todoInput = document.querySelector('#todoInput')
+    var todoList = document.querySelector('#todoList')
+
+    todoInput.addEventListener('keyup', e => {
+      //按键是回车
+      if (e.key == 'Enter') {
+        //把文字(文本框元素的value）读出来，添加一个todo条目
+        //trim之后让他非空
+        var todoText = todoInput.value.trim()
+        if (todoText) {
+          //要清空文本框！
+          todoInput.value = ''
+
+          //动态添加，那就要创建li
+          var li = document.createElement('li')
+          //增加一个类名，因为下面那个事件监听里访问不到li
+          li.classList.add('todo-item')
+
+          //这里是做todo前面的已完成勾选框
+          var checkbox = document.createElement('input')
+          //还要让input的类型是checkbox，因为直接创建出来是个文本框
+          checkbox.type = 'checkbox'
+          //把checkbox往li放
+          li.appendChild(checkbox)
+
+
+          //li的内容等于刚刚输入并按完回车的文本
+          // li.textContent = todoText //如果用这一步那前面的各自属性就没了,所以要创建文本节点
+          li.appendChild(document.createTextNode(todoText))
+
+          var delButton = document.createElement('button')
+          //&times;是html中x的转义符，js直接写×
+          delButton.textContent = 'x'
+          //增加一个类名
+          delButton.classList.add('delete')
+          li.appendChild(delButton)
+
+
+          //把li增加到todoList里
+          todoList.appendChild(li)
+          } else { //如果没有文本，比如是空格，那就清空
+            todoInput.value = ''
+          }
+      }
+    })
+
+    todoList.addEventListener('click', e => {
+      //选中li里面的button（上面加了个类名以防万一）
+      if (e.target.matches('li button.delete')) {
+        //找出e.target的祖先中离他最近的满足该选择器的元素
+        var todoListItem = e.target.closest('.todo-item')
+        //这不能remove写li，因为这里访问不到li
+        todoList.removeChild(todoListItem)
+      }
+    })
+
+    //实现勾选后，li就增加completed类名，加中划线
+    todoList.addEventListener('change', e => {
+      if (e.target.matches('input')) {
+        var todoListItem = e.target.closest('.todo-item')
+        if (e.target.checked) {
+          todoListItem.classList.add('completed')
+        } else {
+          todoListItem.classList.remove('completed')
+        }
+      }
+    })
+  
+  </script>
 </body>
 </html>
